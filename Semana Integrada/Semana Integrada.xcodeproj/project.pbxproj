@@ -1,0 +1,357 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F13E8A61D46757400886F07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13E8A51D46757400886F07 /* AppDelegate.swift */; };
+		7F13E8A81D46757400886F07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13E8A71D46757400886F07 /* ViewController.swift */; };
+		7F13E8AB1D46757400886F07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F13E8A91D46757400886F07 /* Main.storyboard */; };
+		7F13E8AD1D46757400886F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F13E8AC1D46757400886F07 /* Assets.xcassets */; };
+		7F13E8B01D46757400886F07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F13E8AE1D46757400886F07 /* LaunchScreen.storyboard */; };
+		7F13E8B91D4678AB00886F07 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13E8B81D4678AB00886F07 /* ActivityViewController.swift */; };
+		7F13E8BB1D4678B600886F07 /* ActitivyTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13E8BA1D4678B600886F07 /* ActitivyTabViewController.swift */; };
+		7F13E8BD1D4678DA00886F07 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13E8BC1D4678DA00886F07 /* FavoritesViewController.swift */; };
+		7F13E8BF1D4678E600886F07 /* FavoritesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13E8BE1D4678E600886F07 /* FavoritesTabViewController.swift */; };
+		7F13E8C11D4678EF00886F07 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13E8C01D4678EF00886F07 /* MapViewController.swift */; };
+		7F13E8C31D46790100886F07 /* MapTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13E8C21D46790100886F07 /* MapTabViewController.swift */; };
+		7F13E8C51D46791000886F07 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13E8C41D46791000886F07 /* InfoViewController.swift */; };
+		7F13E8C71D46791900886F07 /* InfoTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13E8C61D46791900886F07 /* InfoTabViewController.swift */; };
+		7F13E8CA1D467D2F00886F07 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F13E8C91D467D2F00886F07 /* Activity.storyboard */; };
+		7F13E8CC1D468BE800886F07 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F13E8CB1D468BE800886F07 /* Favorites.storyboard */; };
+		7F13E8CE1D468CC300886F07 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F13E8CD1D468CC300886F07 /* Map.storyboard */; };
+		7F13E8D01D468D1400886F07 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F13E8CF1D468D1400886F07 /* Info.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7F13E8A21D46757400886F07 /* Semana Integrada.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Semana Integrada.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F13E8A51D46757400886F07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7F13E8A71D46757400886F07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7F13E8AA1D46757400886F07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7F13E8AC1D46757400886F07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F13E8AF1D46757400886F07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7F13E8B11D46757400886F07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F13E8B81D4678AB00886F07 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		7F13E8BA1D4678B600886F07 /* ActitivyTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActitivyTabViewController.swift; sourceTree = "<group>"; };
+		7F13E8BC1D4678DA00886F07 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		7F13E8BE1D4678E600886F07 /* FavoritesTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTabViewController.swift; sourceTree = "<group>"; };
+		7F13E8C01D4678EF00886F07 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7F13E8C21D46790100886F07 /* MapTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTabViewController.swift; sourceTree = "<group>"; };
+		7F13E8C41D46791000886F07 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		7F13E8C61D46791900886F07 /* InfoTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTabViewController.swift; sourceTree = "<group>"; };
+		7F13E8C91D467D2F00886F07 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
+		7F13E8CB1D468BE800886F07 /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		7F13E8CD1D468CC300886F07 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		7F13E8CF1D468D1400886F07 /* Info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F13E89F1D46757400886F07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7F13E8991D46757400886F07 = {
+			isa = PBXGroup;
+			children = (
+				7F13E8A41D46757400886F07 /* Semana Integrada */,
+				7F13E8A31D46757400886F07 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7F13E8A31D46757400886F07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F13E8A21D46757400886F07 /* Semana Integrada.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F13E8A41D46757400886F07 /* Semana Integrada */ = {
+			isa = PBXGroup;
+			children = (
+				7F13E8B71D46788000886F07 /* Controllers */,
+				7F13E8A51D46757400886F07 /* AppDelegate.swift */,
+				7F13E8C81D467B3100886F07 /* StoryBoard */,
+				7F13E8AC1D46757400886F07 /* Assets.xcassets */,
+				7F13E8AE1D46757400886F07 /* LaunchScreen.storyboard */,
+				7F13E8B11D46757400886F07 /* Info.plist */,
+			);
+			path = "Semana Integrada";
+			sourceTree = "<group>";
+		};
+		7F13E8B71D46788000886F07 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7F13E8A71D46757400886F07 /* ViewController.swift */,
+				7F13E8B81D4678AB00886F07 /* ActivityViewController.swift */,
+				7F13E8BA1D4678B600886F07 /* ActitivyTabViewController.swift */,
+				7F13E8BC1D4678DA00886F07 /* FavoritesViewController.swift */,
+				7F13E8BE1D4678E600886F07 /* FavoritesTabViewController.swift */,
+				7F13E8C01D4678EF00886F07 /* MapViewController.swift */,
+				7F13E8C21D46790100886F07 /* MapTabViewController.swift */,
+				7F13E8C41D46791000886F07 /* InfoViewController.swift */,
+				7F13E8C61D46791900886F07 /* InfoTabViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7F13E8C81D467B3100886F07 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				7F13E8A91D46757400886F07 /* Main.storyboard */,
+				7F13E8C91D467D2F00886F07 /* Activity.storyboard */,
+				7F13E8CB1D468BE800886F07 /* Favorites.storyboard */,
+				7F13E8CD1D468CC300886F07 /* Map.storyboard */,
+				7F13E8CF1D468D1400886F07 /* Info.storyboard */,
+			);
+			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F13E8A11D46757400886F07 /* Semana Integrada */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F13E8B41D46757400886F07 /* Build configuration list for PBXNativeTarget "Semana Integrada" */;
+			buildPhases = (
+				7F13E89E1D46757400886F07 /* Sources */,
+				7F13E89F1D46757400886F07 /* Frameworks */,
+				7F13E8A01D46757400886F07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Semana Integrada";
+			productName = "Semana Integrada";
+			productReference = 7F13E8A21D46757400886F07 /* Semana Integrada.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F13E89A1D46757400886F07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = venturuspucc;
+				TargetAttributes = {
+					7F13E8A11D46757400886F07 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 7F13E89D1D46757400886F07 /* Build configuration list for PBXProject "Semana Integrada" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F13E8991D46757400886F07;
+			productRefGroup = 7F13E8A31D46757400886F07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F13E8A11D46757400886F07 /* Semana Integrada */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F13E8A01D46757400886F07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F13E8B01D46757400886F07 /* LaunchScreen.storyboard in Resources */,
+				7F13E8D01D468D1400886F07 /* Info.storyboard in Resources */,
+				7F13E8AD1D46757400886F07 /* Assets.xcassets in Resources */,
+				7F13E8CA1D467D2F00886F07 /* Activity.storyboard in Resources */,
+				7F13E8AB1D46757400886F07 /* Main.storyboard in Resources */,
+				7F13E8CC1D468BE800886F07 /* Favorites.storyboard in Resources */,
+				7F13E8CE1D468CC300886F07 /* Map.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F13E89E1D46757400886F07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F13E8BF1D4678E600886F07 /* FavoritesTabViewController.swift in Sources */,
+				7F13E8C31D46790100886F07 /* MapTabViewController.swift in Sources */,
+				7F13E8A81D46757400886F07 /* ViewController.swift in Sources */,
+				7F13E8BB1D4678B600886F07 /* ActitivyTabViewController.swift in Sources */,
+				7F13E8C71D46791900886F07 /* InfoTabViewController.swift in Sources */,
+				7F13E8C51D46791000886F07 /* InfoViewController.swift in Sources */,
+				7F13E8B91D4678AB00886F07 /* ActivityViewController.swift in Sources */,
+				7F13E8BD1D4678DA00886F07 /* FavoritesViewController.swift in Sources */,
+				7F13E8A61D46757400886F07 /* AppDelegate.swift in Sources */,
+				7F13E8C11D4678EF00886F07 /* MapViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7F13E8A91D46757400886F07 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F13E8AA1D46757400886F07 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7F13E8AE1D46757400886F07 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F13E8AF1D46757400886F07 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7F13E8B21D46757400886F07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7F13E8B31D46757400886F07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7F13E8B51D46757400886F07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Semana Integrada/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.com.venturus.Semana-Integrada";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7F13E8B61D46757400886F07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Semana Integrada/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.com.venturus.Semana-Integrada";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F13E89D1D46757400886F07 /* Build configuration list for PBXProject "Semana Integrada" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F13E8B21D46757400886F07 /* Debug */,
+				7F13E8B31D46757400886F07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F13E8B41D46757400886F07 /* Build configuration list for PBXNativeTarget "Semana Integrada" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F13E8B51D46757400886F07 /* Debug */,
+				7F13E8B61D46757400886F07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7F13E89A1D46757400886F07 /* Project object */;
+}

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NDz-BI-Ezs">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Atividades-->
+        <scene sceneID="QsK-Gx-5pc">
+            <objects>
+                <viewController id="nww-bU-8T9" customClass="ActivityTabViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ncK-o9-2Z3"/>
+                        <viewControllerLayoutGuide type="bottom" id="FtK-MF-Sbq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U2d-CV-ygQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Atividades" id="GgD-Ug-dk2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vUq-Rs-NEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-447" y="155"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="etX-ae-h86">
+            <objects>
+                <tabBarController id="NDz-BI-Ezs" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="s0V-Hs-MsM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nww-bU-8T9" kind="relationship" relationship="viewControllers" id="sf1-fk-pug"/>
+                        <segue destination="JWs-XU-aZi" kind="relationship" relationship="viewControllers" id="V4W-lf-Ju0"/>
+                        <segue destination="aAH-5p-cAs" kind="relationship" relationship="viewControllers" id="FLy-y0-bLP"/>
+                        <segue destination="hDp-m1-Owy" kind="relationship" relationship="viewControllers" id="d3z-Zj-KZh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3HA-Kj-cNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160" y="-635"/>
+        </scene>
+        <!--Favoritos-->
+        <scene sceneID="pND-Dh-9Pa">
+            <objects>
+                <viewController id="JWs-XU-aZi" customClass="FavoritesTabViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TT0-M8-u0b"/>
+                        <viewControllerLayoutGuide type="bottom" id="TSv-W4-6pf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f4v-4f-8DS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favoritos" id="IR7-xC-eXV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9am-7Z-RlI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160" y="155"/>
+        </scene>
+        <!--Informações-->
+        <scene sceneID="gJr-FF-ueI">
+            <objects>
+                <viewController id="hDp-m1-Owy" customClass="InfoTabViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KgF-sU-yPB"/>
+                        <viewControllerLayoutGuide type="bottom" id="DWQ-Uw-ugc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zqe-Ot-VeL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Informações" id="wJZ-k5-Gu0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sid-XI-2bJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160" y="836"/>
+        </scene>
+        <!--Mapa-->
+        <scene sceneID="Esw-Mh-Psv">
+            <objects>
+                <viewController id="aAH-5p-cAs" customClass="MapTabViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8rD-K2-5t4"/>
+                        <viewControllerLayoutGuide type="bottom" id="xap-YZ-9tc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0LV-Ux-GnT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mapa" id="Zas-mB-oT5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="As1-po-mbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="774" y="155"/>
+        </scene>
+    </scenes>
+</document>
