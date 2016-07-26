@@ -8,6 +8,12 @@
 
 import UIKit
 
-class InfoViewController :UIViewController{
+class InfoViewController :UITableViewController{
+    
+   
+    
+    
+    
     
 }
+	
