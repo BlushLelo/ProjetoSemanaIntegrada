@@ -10,33 +10,40 @@ import UIKit
 
 class ActivyViewController: UIViewController,UITableViewDataSource{
     
-    let vet = ["Joao","Rodrigo","Carradas"]
+    //let vet = ["Joao","Rodrigo","Carradas"]
+    let scheduleDAO = ScheduleDAO()
+    var dictionary = [String:Schedule]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dictionary = scheduleDAO.generatePalestras();
     }
 
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return vet[0]
+        let keys = Array(dictionary.keys)
+        return keys[section]
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return vet.count
+        return dictionary.keys.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath)
-        cell.textLabel?.text = vet[indexPath.row]
+        let keys = Array(dictionary.keys)
+        let key = keys[indexPath.section]
+        let events = dictionary[key]
+        cell.textLabel?.text = events?.EventTitle
         return  cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vet.count
+        let keys = Array(dictionary.keys)
+        let key = keys.count
+        return key
     }
     
     
-    
-    
-    
+
 }

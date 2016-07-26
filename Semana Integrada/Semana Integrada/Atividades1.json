@@ -1,0 +1,44 @@
+ [
+  {
+  "EventTitle": "WorkShop UI/UX",
+  "EventHour": "09:00",
+  "EventType": "WorkShop",
+  "EventLocation": "Dom Gilberto"
+  },
+  {
+  "EventTitle": "IOT",
+  "EventHour": "09:00",
+  "EventType": "Palestra",
+  "EventLocation": "Dom Gilberto"
+  },
+  {
+  "EventTitle": "SAP",
+  "EventHour": "11:00",
+  "EventType": "Palestra",
+  "EventLocation": "H11 Sala 06"
+  },
+  {
+  "EventTitle": "NODEJs",
+  "EventHour": "10:00",
+  "EventType": "Palestra",
+  "EventLocation": "H08 Sala 08"
+  },
+  {
+  "EventTitle": "Campeonato de CS",
+  "EventHour": "13:00",
+  "EventType": "Campeonato",
+  "EventLocation": "H11 Sala 32"
+  },
+  {
+  "EventTitle": "Smart Grid",
+  "EventHour": "09:00",
+  "EventType": "Palestra",
+  "EventLocation": "H5 Sala 13"
+  },
+  {
+  "EventTitle": "Visita Técnica Venturus",
+  "EventHour": "09:00",
+  "EventType": "Visita Técnica",
+  "EventLocation": "Venturus"
+  }
+  ]
