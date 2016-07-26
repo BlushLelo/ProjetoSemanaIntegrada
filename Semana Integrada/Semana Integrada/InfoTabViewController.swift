@@ -9,7 +9,7 @@
 import UIKit
 
 class InfoTabViewController : UIViewController {
-    z
+    
     
     
     override func viewDidLoad() {
