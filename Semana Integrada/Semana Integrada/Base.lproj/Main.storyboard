@@ -44,16 +44,26 @@
                                     <constraint firstAttribute="width" secondItem="U9Q-N0-eOC" secondAttribute="height" multiplier="45:38" id="SBR-fA-DSI"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_pucc" translatesAutoresizingMaskIntoConstraints="NO" id="7Lm-O0-rug">
+                                <rect key="frame" x="70" y="544" width="460" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7Lm-O0-rug" secondAttribute="height" multiplier="278:47" id="KQ3-23-0Pe"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="7Lm-O0-rug" firstAttribute="top" secondItem="U9Q-N0-eOC" secondAttribute="bottom" constant="8" id="KUt-c7-FHJ"/>
                             <constraint firstItem="U9Q-N0-eOC" firstAttribute="centerY" secondItem="BNP-Cs-Gl6" secondAttribute="centerY" id="bXb-LJ-8u7"/>
                             <constraint firstItem="U9Q-N0-eOC" firstAttribute="leading" secondItem="BNP-Cs-Gl6" secondAttribute="leadingMargin" id="rrw-iw-Z7K"/>
                             <constraint firstItem="U9Q-N0-eOC" firstAttribute="centerX" secondItem="BNP-Cs-Gl6" secondAttribute="centerX" id="wE4-EG-1SZ"/>
+                            <constraint firstItem="7Lm-O0-rug" firstAttribute="leading" secondItem="BNP-Cs-Gl6" secondAttribute="leadingMargin" constant="50" id="zeJ-Zv-k9M"/>
+                            <constraint firstItem="7Lm-O0-rug" firstAttribute="centerX" secondItem="BNP-Cs-Gl6" secondAttribute="centerX" id="zgs-hS-r1v"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageSplashScreen" destination="U9Q-N0-eOC" id="7ug-EZ-K5g"/>
+                        <outlet property="logoPucc_splashScreen" destination="7Lm-O0-rug" id="2IB-Cp-Gz5"/>
                         <segue destination="NDz-BI-Ezs" kind="showDetail" identifier="nextViewSegue" id="ALK-WN-k6K"/>
                     </connections>
                 </viewController>
@@ -140,6 +150,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_pucc" width="246" height="47"/>
         <image name="vinheta_00071" width="605" height="693"/>
     </resources>
 </document>

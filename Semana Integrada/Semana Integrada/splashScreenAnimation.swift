@@ -11,6 +11,7 @@ import UIKit
 class SplashScreenAnimation: UIViewController {
     
     
+    @IBOutlet weak var logoPucc_splashScreen: UIImageView!
     
     @IBOutlet weak var imageSplashScreen: UIImageView!
     
@@ -29,6 +30,8 @@ class SplashScreenAnimation: UIViewController {
         }
         
         
+        logoPucc_splashScreen.hidden = true;// começa com o logo da puc escondido
+        
        imageSplashScreen.animationImages = images//joga as imagens para a animação
         
         imageSplashScreen.animationDuration = 3.5//duração da splashscreen
@@ -44,13 +47,17 @@ class SplashScreenAnimation: UIViewController {
         
        
         
-        
+    self.performSelector("show", withObject: nil, afterDelay: 3)// depois de 3 segundo aparece o logo da puc
         
         
     self.performSelector("nextView", withObject: imageSplashScreen, afterDelay: 6)//seleciono uma view para a animação, depois vai para a atividades
         
         
         
+    }
+    
+    func show(){// função que seta meu logo com visivel
+        logoPucc_splashScreen.hidden = false;
     }
     
     
