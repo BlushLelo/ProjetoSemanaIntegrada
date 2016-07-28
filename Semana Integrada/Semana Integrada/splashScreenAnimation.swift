@@ -34,7 +34,7 @@ class SplashScreenAnimation: UIViewController {
         
        imageSplashScreen.animationImages = images//joga as imagens para a animação
         
-        imageSplashScreen.animationDuration = 3.5//duração da splashscreen
+        imageSplashScreen.animationDuration = 3.6//duração da splashscreen
         
         imageSplashScreen.animationRepeatCount = 1//repetoção da animação
         
@@ -47,7 +47,7 @@ class SplashScreenAnimation: UIViewController {
         
        
         
-    self.performSelector("show", withObject: nil, afterDelay: 3)// depois de 3 segundo aparece o logo da puc
+    self.performSelector("show", withObject: nil, afterDelay: 3.6)// depois de 3 segundo aparece o logo da puc
         
         
     self.performSelector("nextView", withObject: imageSplashScreen, afterDelay: 6)//seleciono uma view para a animação, depois vai para a atividades
