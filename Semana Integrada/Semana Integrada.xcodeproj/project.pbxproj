@@ -30,6 +30,8 @@
 		7FD6356C1D47E4AE00FDDB96 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD6356B1D47E4AE00FDDB96 /* SwiftyJSON.swift */; };
 		7FD6356E1D47EC3200FDDB96 /* Atividades.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FD6356D1D47EC3200FDDB96 /* Atividades.json */; };
 		7FD635701D47EC9C00FDDB96 /* Atividades1.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FD6356F1D47EC9C00FDDB96 /* Atividades1.json */; };
+		7FEC4DFA1D4A875600215603 /* customCellInterface.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FEC4DF91D4A875600215603 /* customCellInterface.xib */; };
+		7FEC4DFC1D4A887800215603 /* EventTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC4DFB1D4A887800215603 /* EventTableCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		7FD6356B1D47E4AE00FDDB96 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		7FD6356D1D47EC3200FDDB96 /* Atividades.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Atividades.json; path = ../Atividades.json; sourceTree = "<group>"; };
 		7FD6356F1D47EC9C00FDDB96 /* Atividades1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Atividades1.json; sourceTree = "<group>"; };
+		7FEC4DF91D4A875600215603 /* customCellInterface.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = customCellInterface.xib; sourceTree = "<group>"; };
+		7FEC4DFB1D4A887800215603 /* EventTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 			children = (
 				7FD6356F1D47EC9C00FDDB96 /* Atividades1.json */,
 				7FD6356B1D47E4AE00FDDB96 /* SwiftyJSON.swift */,
+				7FEC4DF81D4A866200215603 /* View */,
 				7FAE0D831D47C52E00055B40 /* Models */,
 				7F13E8B71D46788000886F07 /* Controllers */,
 				7F13E8A51D46757400886F07 /* AppDelegate.swift */,
@@ -148,6 +153,15 @@
 				7FD6356D1D47EC3200FDDB96 /* Atividades.json */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		7FEC4DF81D4A866200215603 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FEC4DF91D4A875600215603 /* customCellInterface.xib */,
+				7FEC4DFB1D4A887800215603 /* EventTableCellView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FEC4DFA1D4A875600215603 /* customCellInterface.xib in Resources */,
 				7FD6356E1D47EC3200FDDB96 /* Atividades.json in Resources */,
 				7F13E8B01D46757400886F07 /* LaunchScreen.storyboard in Resources */,
 				7F13E8D01D468D1400886F07 /* Info.storyboard in Resources */,
@@ -241,6 +256,7 @@
 				7F13E8B91D4678AB00886F07 /* ActivityViewController.swift in Sources */,
 				7F13E8BD1D4678DA00886F07 /* FavoritesViewController.swift in Sources */,
 				7F13E8A61D46757400886F07 /* AppDelegate.swift in Sources */,
+				7FEC4DFC1D4A887800215603 /* EventTableCellView.swift in Sources */,
 				7F13E8C11D4678EF00886F07 /* MapViewController.swift in Sources */,
 				7FD6356C1D47E4AE00FDDB96 /* SwiftyJSON.swift in Sources */,
 				7FAE0D881D47C56A00055B40 /* Schedule.swift in Sources */,

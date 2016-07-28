@@ -10,6 +10,8 @@ import Foundation
 
 class ScheduleDAO {
     
+    
+    
     var Teste = Schedule()
     var palestras = [String:[Schedule]]()
     var ListaDePalestras = [Schedule]()
