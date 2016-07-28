@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="90" id="Fa3-YM-87y" customClass="EventTableCellView" customModule="Semana_Integrada" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fa3-YM-87y" id="d5d-Rw-C0a">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yB-vk-PYH">
+                        <rect key="frame" x="8" y="8" width="268" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="268" id="P4u-Rv-9Ci"/>
+                            <constraint firstAttribute="height" constant="21" id="gW6-5I-TaI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZO-BZ-iyJ">
+                        <rect key="frame" x="8" y="60" width="268" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="268" id="Mz6-7y-eor"/>
+                            <constraint firstAttribute="height" constant="21" id="obC-dg-jLO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojN-hm-1FS">
+                        <rect key="frame" x="266" y="30" width="46" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="qfY-N4-K17"/>
+                            <constraint firstAttribute="height" constant="30" id="sxK-ej-jMS"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="421-hS-4yW">
+                        <rect key="frame" x="8" y="34" width="268" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="268" id="Kph-cQ-iHh"/>
+                            <constraint firstAttribute="height" constant="21" id="dI1-V9-B8j"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="topMargin" secondItem="1yB-vk-PYH" secondAttribute="top" id="0ve-6K-AFS"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="421-hS-4yW" secondAttribute="leading" id="9lI-Wy-79o"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="6ZO-BZ-iyJ" secondAttribute="leading" id="MQL-IB-8xx"/>
+                    <constraint firstItem="6ZO-BZ-iyJ" firstAttribute="top" secondItem="d5d-Rw-C0a" secondAttribute="topMargin" constant="52" id="O3j-Lt-2Xp"/>
+                    <constraint firstItem="ojN-hm-1FS" firstAttribute="centerY" secondItem="d5d-Rw-C0a" secondAttribute="centerY" id="UCQ-8q-M6w"/>
+                    <constraint firstItem="421-hS-4yW" firstAttribute="top" secondItem="d5d-Rw-C0a" secondAttribute="topMargin" constant="26" id="dIt-1U-vJZ"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="1yB-vk-PYH" secondAttribute="leading" id="dXz-D8-nlW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ojN-hm-1FS" secondAttribute="trailing" constant="8" id="jzU-hd-hiu"/>
+            </constraints>
+            <connections>
+                <outlet property="EventHour" destination="6ZO-BZ-iyJ" id="Dz0-8F-5Pd"/>
+                <outlet property="eventDescription" destination="421-hS-4yW" id="zA0-xy-DbX"/>
+                <outlet property="eventType" destination="1yB-vk-PYH" id="ZvU-Ui-eZw"/>
+            </connections>
+            <point key="canvasLocation" x="237" y="138"/>
+        </tableViewCell>
+    </objects>
+</document>
