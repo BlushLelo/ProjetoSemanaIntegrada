@@ -9,38 +9,35 @@
 import Foundation
 
 class ScheduleDAO {
+    
     var Teste = Schedule()
+    var palestras = [String:[Schedule]]()
+    var ListaDePalestras = [Schedule]()
     
-    var palestras = [String:Schedule]()
-    var Palestra = Schedule()
-    
-    
-    func generatePalestras() -> [String:Schedule] {
+    func generatePalestras() -> [String:[Schedule]] {
+        
         let filePath = NSBundle.mainBundle().pathForResource("Atividades1", ofType: "json")
-        
         let data = NSData(contentsOfFile: filePath!)!
-        
         let myJson = JSON(data: data)
         
-        
         for i in myJson{
-            
             let test = i.1
+            let Palestra = Schedule();
             Palestra.EventTitle = test["EventTitle"].stringValue
             Palestra.EventHour = test["EventHour"].stringValue
             Palestra.EventType = test["EventType"].stringValue
             Palestra.EventLocation = test["EventLocation"].stringValue
-            palestras[Palestra.EventHour!] = Palestra
-            print(test["EventTitle"].stringValue)
-            print(test["EventHour"].stringValue)
-            print(test["EventType"].stringValue)
-            print(test["EventLocation"].stringValue)
+            if var array = palestras[Palestra.EventHour!]{
+                array.append(Palestra);
+                palestras[Palestra.EventHour!] = array;
+            } else {
+                var array = [Schedule]();
+                array.append(Palestra)
+                palestras[Palestra.EventHour!] = array;
+            }
             
         }
-  
         return palestras
     }
-    
-    
     
 }
