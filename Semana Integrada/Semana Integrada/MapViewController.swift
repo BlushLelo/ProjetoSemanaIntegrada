@@ -20,7 +20,7 @@ class MapViewController: UIViewController, UIScrollViewDelegate{
         
         
         
-        imageView = UIImageView(image: UIImage(named: "map_full.png"))
+        imageView = UIImageView(image: UIImage(named: "map_full1.png"))
         
         backgroundView = UIView(frame: imageView.frame)
         backgroundView.addSubview(imageView)
