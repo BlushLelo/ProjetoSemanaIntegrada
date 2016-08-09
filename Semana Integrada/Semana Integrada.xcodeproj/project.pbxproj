@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57EAD3B61D5A700500BB8E1F /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EAD3B51D5A700500BB8E1F /* SegmentedControl.swift */; };
 		7F13E8A61D46757400886F07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13E8A51D46757400886F07 /* AppDelegate.swift */; };
 		7F13E8A81D46757400886F07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13E8A71D46757400886F07 /* ViewController.swift */; };
 		7F13E8AB1D46757400886F07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F13E8A91D46757400886F07 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57EAD3B51D5A700500BB8E1F /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		7F13E8A21D46757400886F07 /* Semana Integrada.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Semana Integrada.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F13E8A51D46757400886F07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F13E8A71D46757400886F07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				7F13E8C41D46791000886F07 /* InfoViewController.swift */,
 				7F13E8C61D46791900886F07 /* InfoTabViewController.swift */,
 				7F6C0A7E1D491F4000DAFD7D /* splashScreenAnimation.swift */,
+				57EAD3B51D5A700500BB8E1F /* SegmentedControl.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				7FEC4DFC1D4A887800215603 /* EventTableCellView.swift in Sources */,
 				7F13E8C11D4678EF00886F07 /* MapViewController.swift in Sources */,
 				7FD6356C1D47E4AE00FDDB96 /* SwiftyJSON.swift in Sources */,
+				57EAD3B61D5A700500BB8E1F /* SegmentedControl.swift in Sources */,
 				7FAE0D881D47C56A00055B40 /* Schedule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
