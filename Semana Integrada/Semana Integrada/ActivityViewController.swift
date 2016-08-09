@@ -15,6 +15,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource{
     var dictionary = [String:[Schedule]]()
     var sortedKeys = [String]()
     
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,6 @@ class ActivyViewController: UIViewController,UITableViewDataSource{
             let cellNib = UINib(nibName: "customCellInterface", bundle: nil)
             tableView.registerNib(cellNib, forCellReuseIdentifier: "myCell")
             cell = tableView.dequeueReusableCellWithIdentifier("myCell") as? EventTableCellView
-            
         }
         if ( Palestra![indexPath.row].EventType == "Palestra"){
             cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
@@ -61,7 +61,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource{
         cell?.eventDescription.text = Palestra![indexPath.row].EventTitle
         cell?.EventHour.text = Palestra![indexPath.row].EventLocation
         
-        
+    
         return cell!
     }
 

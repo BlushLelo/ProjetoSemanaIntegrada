@@ -14,5 +14,6 @@ class Schedule {
     var EventHour:String?
     var EventType:String?
     var EventLocation:String?
+    var favorite:Bool?
     
 }

@@ -1,27 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xAG-PU-zG3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TVG-qc-8Qv">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Favorites View Controller-->
-        <scene sceneID="kgB-EO-ax6">
+        <scene sceneID="wev-cE-h0n">
             <objects>
-                <viewController id="xAG-PU-zG3" customClass="FavoritesViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TVG-qc-8Qv" customClass="FavoritesViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zAb-xK-V3X"/>
-                        <viewControllerLayoutGuide type="bottom" id="Y9B-gN-qYZ"/>
+                        <viewControllerLayoutGuide type="top" id="NG6-VO-xi9"/>
+                        <viewControllerLayoutGuide type="bottom" id="hGV-ET-xZy"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Xa9-Tv-TiN">
+                    <view key="view" contentMode="scaleToFill" id="Bh9-1a-CrS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="0.71217672409999999" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uuw-d3-d7N">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="Nf0-z0-xtW"/>
+                                    <constraint firstAttribute="width" constant="600" id="YgN-OD-QH6"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="90" id="Mbo-QM-OtF">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mbo-QM-OtF" id="BKr-PA-DSw">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TVG-qc-8Qv" id="esM-PB-Crg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uuw-d3-d7N" firstAttribute="leading" secondItem="Bh9-1a-CrS" secondAttribute="leadingMargin" constant="-20" id="BvQ-HU-sdj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uuw-d3-d7N" secondAttribute="trailing" constant="-20" id="GCR-xX-2VX"/>
+                            <constraint firstItem="uuw-d3-d7N" firstAttribute="height" secondItem="Bh9-1a-CrS" secondAttribute="height" id="cwk-Qp-B6a"/>
+                            <constraint firstItem="uuw-d3-d7N" firstAttribute="width" secondItem="Bh9-1a-CrS" secondAttribute="width" id="f4H-QZ-0z8"/>
+                            <constraint firstItem="uuw-d3-d7N" firstAttribute="bottom" secondItem="hGV-ET-xZy" secondAttribute="top" id="oEq-Y8-ZKd"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xqN-lJ-jzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TKy-la-dR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="426" y="390"/>
+            <point key="canvasLocation" x="318" y="211"/>
         </scene>
     </scenes>
 </document>
