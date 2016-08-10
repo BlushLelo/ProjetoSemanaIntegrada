@@ -35,7 +35,7 @@
                                     <outlet property="dataSource" destination="Gua-2f-EvQ" id="84f-tx-HZQ"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wlh-1f-vdv" customClass="ADVSegmentedControl" customModule="Semana_Integrada" customModuleProvider="target">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wlh-1f-vdv" customClass="SegmentedControl" customModule="Semana_Integrada" customModuleProvider="target">
                                 <rect key="frame" x="8" y="72" width="586" height="46"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
