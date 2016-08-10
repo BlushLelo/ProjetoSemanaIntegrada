@@ -16,6 +16,7 @@ class ScheduleDAO {
     var palestras = [String:[Schedule]]()
     var ListaDePalestras = [Schedule]()
     
+    
     func generatePalestras() -> [String:[Schedule]] {
         
         let filePath = NSBundle.mainBundle().pathForResource("Atividades1", ofType: "json")
@@ -29,6 +30,7 @@ class ScheduleDAO {
             Palestra.EventHour = test["EventHour"].stringValue
             Palestra.EventType = test["EventType"].stringValue
             Palestra.EventLocation = test["EventLocation"].stringValue
+            Palestra.favorite = false
             if var array = palestras[Palestra.EventHour!]{
                 array.append(Palestra);
                 palestras[Palestra.EventHour!] = array;
