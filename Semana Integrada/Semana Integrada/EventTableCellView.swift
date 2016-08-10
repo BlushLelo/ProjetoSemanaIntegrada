@@ -14,5 +14,16 @@ class EventTableCellView:UITableViewCell{
     
     @IBOutlet weak var eventDescription: UILabel!
     
+    @IBOutlet weak var eventFavorite: UIButton!
+    
+    @IBAction func actionFavorite(sender: UIButton) {
+        
+        
+        let image = UIImage (named: "ic_favourites_selected.png") as UIImage!
+        
+        eventFavorite?.setImage(image, forState: .Normal)
+        
+        
+    }
     @IBOutlet weak var EventHour: UILabel!
 }
