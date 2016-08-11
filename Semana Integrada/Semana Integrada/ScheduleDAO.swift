@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ScheduleDAO {
+class ScheduleDAO : EventTableCellView {
     
     
     
@@ -30,7 +30,8 @@ class ScheduleDAO {
             Palestra.EventHour = test["EventHour"].stringValue
             Palestra.EventType = test["EventType"].stringValue
             Palestra.EventLocation = test["EventLocation"].stringValue
-            Palestra.favorite = false
+            Palestra.favorite = Favoritado()
+            
             if var array = palestras[Palestra.EventHour!]{
                 array.append(Palestra);
                 palestras[Palestra.EventHour!] = array;
