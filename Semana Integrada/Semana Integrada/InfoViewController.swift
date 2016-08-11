@@ -18,10 +18,10 @@ class InfoViewController :UITableViewController{
 
     }
     
-    @IBAction func PhoneButton(sender: AnyObject) {
+    @IBAction func PhoneButton(sender: AnyObject) {   // or UIObject 
         
         
-        UIApplication.sharedApplication().openURL(NSURL(string: "telprompt://0800")!)
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://0800 728 7822")!)
         
     }
     
