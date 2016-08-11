@@ -8,6 +8,29 @@
 
 import UIKit
 
-class InfoViewController :UIViewController{
+class InfoViewController :UITableViewController{
+    
+  
+    
+    @IBAction func SiteButton(sender: UIButton) {
+        let url = NSURL(string: "https://semanaintegrada.com.br")
+        UIApplication.sharedApplication().openURL(url!)
+
+    }
+    
+    @IBAction func PhoneButton(sender: AnyObject) {
+        
+        
+        UIApplication.sharedApplication().openURL(NSURL(string: "telprompt://0800")!)
+        
+    }
+    
+    
+    
+    
     
 }
+
+
+
+    
