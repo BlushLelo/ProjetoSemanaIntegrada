@@ -10,10 +10,13 @@ import UIKit
 
 class ActivyViewController: UIViewController,UITableViewDataSource{
     
+    @IBOutlet weak var tableView: UITableView!
+    
     //let vet = ["Joao","Rodrigo","Carradas"]
     let scheduleDAO = ScheduleDAO()
     var dictionary = [String:[Schedule]]()
     var sortedKeys = [String]()
+    
     
     
     override func viewDidLoad() {
@@ -62,6 +65,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource{
         cell?.EventHour.text = Palestra![indexPath.row].EventLocation
         
         
+        
         return cell!
     }
 
@@ -73,6 +77,20 @@ class ActivyViewController: UIViewController,UITableViewDataSource{
         return numberOfRows!.count
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let selectIndexPath = tableView.indexPathForSelectedRow
+        let eventDetailsViewController = segue.destinationViewController as? ActivityDetailController
+        
+        let keys = Array(dictionary.keys)
+        
+        let hourKey = keys[selectIndexPath!.section]
+        
+        eventDetailsViewController?.event = dictionary[hourKey]![selectIndexPath!.row]
+        
+        
+
+    }
 
     
     

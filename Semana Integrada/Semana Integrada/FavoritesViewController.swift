@@ -10,6 +10,8 @@ import UIKit
 
 class FavoritesViewController: UIViewController, UITableViewDataSource{
     
+    
+    var task:NSMutableArray! = NSMutableArray()
     let scheduleDAO = ScheduleDAO()
     var dictionary = [String:[Schedule]]()
     var sortedKeys = [String]()
@@ -25,7 +27,6 @@ class FavoritesViewController: UIViewController, UITableViewDataSource{
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-      
         generateFavorites()
         sortedKeys = Array(favoriteDictionary.keys).sort(<)
     }
@@ -66,7 +67,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource{
         let key = keys[indexPath.section]
         let Palestra = favoriteDictionary[key]
         //cell.textLabel?.text = Palestra![indexPath.row].EventTitle
-        
+
         
         var cell = tableView.dequeueReusableCellWithIdentifier("myCell") as? EventTableCellView
         
@@ -93,10 +94,13 @@ class FavoritesViewController: UIViewController, UITableViewDataSource{
         
         cell?.eventDescription.text = Palestra![indexPath.row].EventTitle
         cell?.EventHour.text = Palestra![indexPath.row].EventLocation
-        
+      
+
         
         return cell!
     }
+    
+
     
     
     
