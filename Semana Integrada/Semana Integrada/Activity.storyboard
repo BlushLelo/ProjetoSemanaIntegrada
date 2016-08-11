@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hka-J7-I5G">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hka-J7-I5G">
                                 <rect key="frame" x="0.0" y="126" width="600" height="520"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="90" id="8g9-V7-5OJ">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="90"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="85" id="8g9-V7-5OJ">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8g9-V7-5OJ" id="xhh-49-5o5">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -35,7 +35,7 @@
                                     <outlet property="dataSource" destination="Gua-2f-EvQ" id="84f-tx-HZQ"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wlh-1f-vdv" customClass="SegmentedControl" customModule="Semana_Integrada" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlh-1f-vdv" customClass="SegmentedControl" customModule="Semana_Integrada" customModuleProvider="target">
                                 <rect key="frame" x="8" y="72" width="586" height="46"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -43,13 +43,27 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.35247710206797334" green="0.30187246952871871" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.41743836997312311" green="0.17976193883553404" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="hka-J7-I5G" secondAttribute="bottom" constant="-46" id="Oat-Dh-UHq"/>
+                            <constraint firstItem="hka-J7-I5G" firstAttribute="top" secondItem="Wlh-1f-vdv" secondAttribute="bottom" constant="8" symbolic="YES" id="Pd3-Xk-Den"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wlh-1f-vdv" secondAttribute="trailing" constant="-14" id="Qs9-KG-ekH"/>
+                            <constraint firstItem="hka-J7-I5G" firstAttribute="leading" secondItem="Qef-WR-Ywa" secondAttribute="leading" id="USK-gy-aeg"/>
+                            <constraint firstItem="Wlh-1f-vdv" firstAttribute="top" secondItem="yKT-TZ-ZdK" secondAttribute="bottom" constant="8" symbolic="YES" id="VqJ-c2-sdr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wlh-1f-vdv" secondAttribute="trailing" constant="-14" id="X76-2H-oDm"/>
+                            <constraint firstAttribute="trailing" secondItem="hka-J7-I5G" secondAttribute="trailing" id="fJp-4L-rZv"/>
                             <constraint firstItem="Wlh-1f-vdv" firstAttribute="leading" secondItem="Qef-WR-Ywa" secondAttribute="leadingMargin" constant="-12" id="oh0-Ma-39W"/>
+                            <constraint firstItem="Wlh-1f-vdv" firstAttribute="leading" secondItem="Qef-WR-Ywa" secondAttribute="leadingMargin" constant="-12" id="tSB-lB-AHr"/>
                             <constraint firstItem="Wlh-1f-vdv" firstAttribute="centerX" secondItem="Qef-WR-Ywa" secondAttribute="centerX" id="zq8-jG-cTu"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Qs9-KG-ekH"/>
+                                <exclude reference="oh0-Ma-39W"/>
+                                <exclude reference="zq8-jG-cTu"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="cBl-sI-CAn">
                         <nil key="title"/>

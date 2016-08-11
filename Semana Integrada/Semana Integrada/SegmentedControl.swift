@@ -47,8 +47,9 @@ import UIKit
     
     func setupView(){
         layer.cornerRadius =  frame.height / 2
-        layer.borderColor = UIColor(white: 1.0, alpha: 0.5).CGColor //cor da borda
+        layer.borderColor = UIColor(white: 0, alpha: 0).CGColor //cor da borda geral
         layer.borderWidth = 2
+    
         
         backgroundColor = UIColor.clearColor() // cor do fundo
         
@@ -71,7 +72,7 @@ import UIKit
             let label = UILabel(frame: CGRectZero)
             label.text = items[index - 1]
             label.textAlignment = .Center
-            label.textColor = UIColor(white: 0.5, alpha: 1.0)//cor do textto
+            label.textColor = UIColor(white: 1.0 , alpha: 1.0)//cor do textto
             self.addSubview(label)
             labels.append(label)
             
@@ -86,7 +87,12 @@ import UIKit
         let newWidth = CGRectGetWidth(selecteFrame) / CGFloat(items.count)
         selecteFrame.size.width = newWidth
         thumbView.frame =  selecteFrame
-        thumbView.backgroundColor = UIColor.whiteColor()
+        thumbView.backgroundColor = UIColor.clearColor()
+        
+        
+        thumbView.layer.borderColor = UIColor(white: 1.0, alpha: 1.0).CGColor// cor do anel em volta do dia da semana
+        thumbView.layer.borderWidth = 2// essa linha faz o anel aparecer em volta do dia da senaba
+        
         thumbView.layer.cornerRadius = thumbView.frame.height / 2
         
         let labelHeight = self.bounds.height
