@@ -46,8 +46,8 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.35247710206797334" green="0.30187246952871871" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.41743836997312311" green="0.17976193883553404" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="hka-J7-I5G" secondAttribute="bottom" constant="-46" id="Oat-Dh-UHq"/>
                             <constraint firstItem="hka-J7-I5G" firstAttribute="top" secondItem="Wlh-1f-vdv" secondAttribute="bottom" constant="8" symbolic="YES" id="Pd3-Xk-Den"/>
@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eV-pQ-kji" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2847" y="-82.5"/>
+            <point key="canvasLocation" x="1855.5" y="-100.5"/>
         </scene>
         <!--Activity Detail Controller-->
         <scene sceneID="OxQ-Em-hOL">
@@ -143,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2u-hX-6CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3741" y="-157.5"/>
+            <point key="canvasLocation" x="2629.5" y="-100.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yZy-tA-4nK">
@@ -161,7 +161,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUD-8Y-agg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591.5" y="-44.25"/>
+            <point key="canvasLocation" x="1116" y="-111"/>
         </scene>
     </scenes>
 </document>

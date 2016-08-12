@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2BN-cI-tdg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Pmi-Kf-dYG">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,16 +7,15 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Info View Controller-->
-        <scene sceneID="g2Y-Dp-UGL">
+        <!--Root View Controller-->
+        <scene sceneID="ccD-7r-9GS">
             <objects>
-                <tableViewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalPresentationStyle="formSheet" id="2BN-cI-tdg" customClass="InfoViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="SaK-Nx-lO3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <tableViewController id="C8T-vv-2Iu" customClass="InfoViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ftx-Xx-M2L">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection id="vZC-0v-RWE">
+                            <tableViewSection id="emz-Ae-dHF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="77" id="V5y-Ex-fKs">
                                         <rect key="frame" x="0.0" y="35" width="600" height="77"/>
@@ -194,9 +193,6 @@ CEP. 13086-900</string>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYY-0u-Ae6">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <state key="normal" title="TEL" image="ic_phone"/>
-                                                    <connections>
-                                                        <action selector="DialerButton:" destination="2BN-cI-tdg" eventType="touchUpInside" id="dBW-vw-Y5W"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -276,9 +272,6 @@ CEP. 13086-900</string>
                                                 <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jz-gg-QZy">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <state key="normal" title="www.semanaintegrada.com.br"/>
-                                                    <connections>
-                                                        <action selector="SiteButton:" destination="2BN-cI-tdg" eventType="touchUpInside" id="L4u-su-6Kg"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -331,18 +324,16 @@ CEP. 13086-900</string>
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="349" id="CtJ-aA-dCl">
-                                        <rect key="frame" x="0.0" y="390" width="600" height="349"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="382" id="Wox-mp-zDY">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CtJ-aA-dCl" id="4u9-xM-SAX">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="348"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wox-mp-zDY" id="tDU-va-8D2">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANQ-q9-phu">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <state key="normal" title="Button" image="logo_venturus"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="142" y="119" width="72" height="77"/>
+                                                        <rect key="frame" x="164" y="142" width="72" height="77"/>
                                                     </variation>
                                                 </button>
                                             </subviews>
@@ -362,19 +353,37 @@ CEP. 13086-900</string>
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="dataSource" destination="2BN-cI-tdg" id="akg-Ei-h4F"/>
-                            <outlet property="delegate" destination="2BN-cI-tdg" id="Wz3-qg-0CJ"/>
+                            <outlet property="dataSource" destination="C8T-vv-2Iu" id="Tly-vc-o2f"/>
+                            <outlet property="delegate" destination="C8T-vv-2Iu" id="Yth-dT-TBS"/>
                         </connections>
                     </tableView>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="ew8-vN-kiD"/>
+                    <keyCommands/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A1P-ua-C4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Nt-cc-DD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618" y="-148.5"/>
+            <point key="canvasLocation" x="-796.5" y="-478.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VhG-ZD-329">
+            <objects>
+                <navigationController id="Pmi-Kf-dYG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tyI-mM-zQL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="C8T-vv-2Iu" kind="relationship" relationship="rootViewController" id="rL1-MD-ER9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wba-f2-4Uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1648.5" y="-478.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="ic_phone" width="27" height="27"/>
         <image name="logo_venturus" width="69" height="77"/>
     </resources>
+    <color key="tintColor" red="0.098039215686274508" green="0.73725490196078436" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
 </document>
