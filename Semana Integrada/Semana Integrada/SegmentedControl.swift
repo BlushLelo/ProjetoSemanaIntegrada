@@ -139,4 +139,6 @@ import UIKit
         var label = labels[selectedIndex]
         self.thumbView.frame = label.frame
     }
+    
+    
 }

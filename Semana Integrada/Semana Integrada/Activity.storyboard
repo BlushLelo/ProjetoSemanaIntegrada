@@ -18,18 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlh-1f-vdv" customClass="SegmentedControl" customModule="Semana_Integrada" customModuleProvider="target">
-                                <rect key="frame" x="8" y="72" width="586" height="46"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="Fvv-5C-dFS"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hka-J7-I5G">
                                 <rect key="frame" x="0.0" y="126" width="600" height="520"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
+<<<<<<< cf8ee421748f771b17b43fef4ea3a126e0f154ea
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="90" id="8g9-V7-5OJ">
+=======
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="90" id="8g9-V7-5OJ">
+>>>>>>>  ...
                                         <rect key="frame" x="0.0" y="28" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8g9-V7-5OJ" id="xhh-49-5o5">
@@ -37,7 +34,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Pcd-xA-nmH" kind="show" id="rjz-R7-icM"/>
+                                            <segue destination="Pcd-xA-nmH" kind="show" identifier="detailSegue" id="En9-qU-dZp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -45,9 +42,22 @@
                                     <outlet property="dataSource" destination="Gua-2f-EvQ" id="84f-tx-HZQ"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlh-1f-vdv" customClass="SegmentedControl" customModule="Semana_Integrada" customModuleProvider="target">
+                                <rect key="frame" x="8" y="72" width="586" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="Fvv-5C-dFS"/>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="7" y="72" width="386" height="46"/>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+<<<<<<< cf8ee421748f771b17b43fef4ea3a126e0f154ea
                         <color key="tintColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+=======
+                        <color key="tintColor" red="0.41743836997312311" green="0.17976193883553404" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+>>>>>>>  ...
                         <constraints>
                             <constraint firstAttribute="bottomMargin" secondItem="hka-J7-I5G" secondAttribute="bottom" constant="-46" id="Oat-Dh-UHq"/>
                             <constraint firstItem="hka-J7-I5G" firstAttribute="top" secondItem="Wlh-1f-vdv" secondAttribute="bottom" constant="8" symbolic="YES" id="Pd3-Xk-Den"/>
@@ -72,6 +82,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="SegmentedControlBar" destination="Wlh-1f-vdv" id="TXY-hw-8pN"/>
                         <outlet property="tableView" destination="Qef-WR-Ywa" id="n2k-iJ-b7X"/>
                     </connections>
                 </viewController>
@@ -143,7 +154,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2u-hX-6CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< cf8ee421748f771b17b43fef4ea3a126e0f154ea
             <point key="canvasLocation" x="2629.5" y="-100.5"/>
+=======
+            <point key="canvasLocation" x="3702" y="-83.25"/>
+>>>>>>>  ...
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yZy-tA-4nK">

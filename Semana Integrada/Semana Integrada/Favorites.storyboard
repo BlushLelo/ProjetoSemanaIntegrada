@@ -36,34 +36,67 @@
                                     <outlet property="dataSource" destination="Dtx-Bd-7bH" id="61G-oX-vvy"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="77B-Y7-Zec" customClass="SegmentedControl" customModule="Semana_Integrada" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="HTG-Op-mY4" firstAttribute="top" secondItem="Zoc-FH-55A" secondAttribute="topMargin" id="ME3-fg-V6h"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="HTG-Op-mY4" secondAttribute="trailing" constant="-20" id="iv6-Mi-RXA"/>
-                            <constraint firstItem="pze-Y5-qgF" firstAttribute="top" secondItem="HTG-Op-mY4" secondAttribute="bottom" id="lF0-LQ-JR6"/>
-                            <constraint firstItem="HTG-Op-mY4" firstAttribute="leading" secondItem="Zoc-FH-55A" secondAttribute="leadingMargin" constant="-20" id="pxm-cd-v5H"/>
+                            <constraint firstItem="77B-Y7-Zec" firstAttribute="leading" secondItem="Zoc-FH-55A" secondAttribute="leadingMargin" constant="-13" id="2Dl-wp-9iU"/>
+                            <constraint firstItem="77B-Y7-Zec" firstAttribute="top" secondItem="Kq5-JF-JLw" secondAttribute="bottom" constant="8" id="Aod-Ou-mYw">
+                                <variation key="heightClass=regular-widthClass=compact" constant="52"/>
+                            </constraint>
+                            <constraint firstAttribute="bottomMargin" secondItem="HTG-Op-mY4" secondAttribute="bottom" constant="-46" id="G7M-cV-PL7"/>
+                            <constraint firstItem="77B-Y7-Zec" firstAttribute="centerX" secondItem="HTG-Op-mY4" secondAttribute="centerX" id="OeA-MD-f6B"/>
+                            <constraint firstItem="77B-Y7-Zec" firstAttribute="centerX" secondItem="Zoc-FH-55A" secondAttribute="centerX" id="Rea-TK-JoZ"/>
+                            <constraint firstItem="HTG-Op-mY4" firstAttribute="leading" secondItem="Zoc-FH-55A" secondAttribute="leading" id="ZII-sR-2B2"/>
+                            <constraint firstItem="HTG-Op-mY4" firstAttribute="top" secondItem="77B-Y7-Zec" secondAttribute="bottom" constant="8" symbolic="YES" id="flC-DW-Las"/>
+                            <constraint firstAttribute="bottom" secondItem="77B-Y7-Zec" secondAttribute="bottom" constant="682" id="ui3-Ho-08t"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="HTG-Op-mY4"/>
+                                <exclude reference="77B-Y7-Zec"/>
                             </mask>
                             <mask key="constraints">
+<<<<<<< cf8ee421748f771b17b43fef4ea3a126e0f154ea
                                 <exclude reference="lF0-LQ-JR6"/>
                                 <exclude reference="ME3-fg-V6h"/>
                                 <exclude reference="iv6-Mi-RXA"/>
                                 <exclude reference="pxm-cd-v5H"/>
+=======
+                                <exclude reference="2Dl-wp-9iU"/>
+                                <exclude reference="Aod-Ou-mYw"/>
+                                <exclude reference="OeA-MD-f6B"/>
+                                <exclude reference="Rea-TK-JoZ"/>
+                                <exclude reference="ui3-Ho-08t"/>
+                                <exclude reference="G7M-cV-PL7"/>
+                                <exclude reference="ZII-sR-2B2"/>
+                                <exclude reference="flC-DW-Las"/>
+>>>>>>>  ...
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="HTG-Op-mY4"/>
+                                <include reference="77B-Y7-Zec"/>
                             </mask>
                             <mask key="constraints">
+<<<<<<< cf8ee421748f771b17b43fef4ea3a126e0f154ea
                                 <include reference="lF0-LQ-JR6"/>
                                 <include reference="ME3-fg-V6h"/>
                                 <include reference="iv6-Mi-RXA"/>
                                 <include reference="pxm-cd-v5H"/>
+=======
+                                <include reference="2Dl-wp-9iU"/>
+                                <include reference="Aod-Ou-mYw"/>
+                                <include reference="OeA-MD-f6B"/>
+                                <include reference="Rea-TK-JoZ"/>
+                                <include reference="ui3-Ho-08t"/>
+                                <include reference="G7M-cV-PL7"/>
+                                <include reference="ZII-sR-2B2"/>
+                                <include reference="flC-DW-Las"/>
+>>>>>>>  ...
                             </mask>
                         </variation>
                     </view>

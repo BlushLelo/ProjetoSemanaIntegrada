@@ -14,17 +14,54 @@ class ActivyViewController: UIViewController,UITableViewDataSource{
     
     //let vet = ["Joao","Rodrigo","Carradas"]
     let scheduleDAO = ScheduleDAO()
+    var dictionaryGeneral = [ [String:[Schedule]] ]()
     var dictionary = [String:[Schedule]]()
     var sortedKeys = [String]()
     
     
+    @IBOutlet weak var SegmentedControlBar: SegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dictionary = scheduleDAO.generatePalestras();
-        sortedKeys = Array(dictionary.keys).sort(<)
+        dictionaryGeneral = scheduleDAO.generatePalestras();
+        SegmentedControlBar.items = ["Seg","Ter","Qua","Qui","Sex","Sab"]
+        SegmentedControlBar.selectedIndex = 0
+        SegmentedControlBar.addTarget(self, action: "test:", forControlEvents: .ValueChanged)
+        
     }
+
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+      
+    }
+    func test (sender: AnyObject?) {
+        if SegmentedControlBar.selectedIndex == 0 {
+            dictionary = dictionaryGeneral[0]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            
+        } else if SegmentedControlBar.selectedIndex == 1 {
+            dictionary = dictionaryGeneral[1]
+            sortedKeys = Array(dictionary.keys).sort(<)
+      
+        } else if SegmentedControlBar.selectedIndex == 2 {
+            dictionary = dictionaryGeneral[2]
+            sortedKeys = Array(dictionary.keys).sort(<)
+        
+        } else if SegmentedControlBar.selectedIndex == 3{
+            dictionary = dictionaryGeneral[3]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            
+        } else if SegmentedControlBar.selectedIndex == 4 {
+            dictionary = dictionaryGeneral[4]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            
+        } else if SegmentedControlBar.selectedIndex == 5 {
+            dictionary = dictionaryGeneral[5]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            
+        }
+    }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sortedKeys[section]
@@ -34,10 +71,12 @@ class ActivyViewController: UIViewController,UITableViewDataSource{
         return sortedKeys.count
     }
     
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  
         
-        
-        //let cell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath)
+       // let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
         let keys = sortedKeys
         let key = keys[indexPath.section]
         let Palestra = dictionary[key]
@@ -65,7 +104,6 @@ class ActivyViewController: UIViewController,UITableViewDataSource{
         cell?.EventHour.text = Palestra![indexPath.row].EventLocation
         
         
-        
         return cell!
     }
 
@@ -78,20 +116,23 @@ class ActivyViewController: UIViewController,UITableViewDataSource{
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detailSegue" {
         
-        let selectIndexPath = tableView.indexPathForSelectedRow
+            
         let eventDetailsViewController = segue.destinationViewController as? ActivityDetailController
         
+        let selectIndexPath = tableView.indexPathForSelectedRow
+            
         let keys = Array(dictionary.keys)
         
         let hourKey = keys[selectIndexPath!.section]
         
         eventDetailsViewController?.event = dictionary[hourKey]![selectIndexPath!.row]
         
-        
+        }
 
     }
-
+    
     
     
     
