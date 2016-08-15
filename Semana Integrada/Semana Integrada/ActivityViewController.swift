@@ -34,6 +34,16 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         SegmentedControlBar.items = ["Seg","Ter","Qua","Qui","Sex","Sab"]
         SegmentedControlBar.selectedIndex = 0
         
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: "rightSwipe:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: "leftSwipe:")
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        
     }
     
     func test (sender: AnyObject?) {
@@ -136,6 +146,28 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     @IBAction func SegmentedControlBarAction(sender: AnyObject?) {
     //  self.tableView.reloadData()
 
+    }
+    
+    func rightSwipe(gestureReconizer: UISwipeGestureRecognizer) {
+        
+        if self.SegmentedControlBar.selectedIndex > 0 {
+            
+            self.SegmentedControlBar.selectedIndex -= 1
+        }
+        else{
+            
+        }
+    }
+
+    func leftSwipe(gestureReconizer: UISwipeGestureRecognizer) {
+        
+        if self.SegmentedControlBar.selectedIndex >= 6 {
+            
+            
+        }
+        else{
+            self.SegmentedControlBar.selectedIndex += 1
+        }
     }
 
     

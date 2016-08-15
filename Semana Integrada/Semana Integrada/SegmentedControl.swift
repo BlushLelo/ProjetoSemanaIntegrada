@@ -23,6 +23,7 @@ import UIKit
     
     var selectedIndex : Int = 0 {
         
+        
         didSet{
             
             displayNewSelectedIndex()
@@ -136,7 +137,14 @@ import UIKit
     
     func displayNewSelectedIndex(){
         
-        var label = labels[selectedIndex]
-        self.thumbView.frame = label.frame
-    }
+        if selectedIndex < 6 {
+            
+            var label = labels[selectedIndex]
+            self.thumbView.frame = label.frame
+            
+        }else{
+            
+        }
+       
+}
 }
