@@ -24,6 +24,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="Fvv-5C-dFS"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="SegmentedControlBarAction:" destination="Gua-2f-EvQ" eventType="valueChanged" id="30l-cx-pmK"/>
+                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hka-J7-I5G">
                                 <rect key="frame" x="0.0" y="126" width="600" height="520"/>
@@ -72,6 +75,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="SegmentedControlBar" destination="Wlh-1f-vdv" id="1rv-yg-aGH"/>
                         <outlet property="tableView" destination="Qef-WR-Ywa" id="n2k-iJ-b7X"/>
                     </connections>
                 </viewController>
