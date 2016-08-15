@@ -19,14 +19,11 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var dictionaryGeneral = [ [String:[Schedule]] ]()
     var sortedKeys = [String]()
     
-   
-   
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        SegmentedControlBar.addTarget(self, action: "test:", forControlEvents: .ValueChanged)
-        
+        tableView.reloadData()
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +32,45 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         SegmentedControlBar.selectedIndex = 0
         
     }
+  
+
     
-    func test (sender: AnyObject?) {
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if SegmentedControlBar.selectedIndex == 0 {
+            dictionary = dictionaryGeneral[0]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            
+        } else if SegmentedControlBar.selectedIndex == 1 {
+            dictionary = dictionaryGeneral[1]
+            sortedKeys = Array(dictionary.keys).sort(<)
+
+            
+        } else if SegmentedControlBar.selectedIndex == 2 {
+            dictionary = dictionaryGeneral[2]
+            sortedKeys = Array(dictionary.keys).sort(<)
+
+            
+        } else if SegmentedControlBar.selectedIndex == 3{
+            dictionary = dictionaryGeneral[3]
+            sortedKeys = Array(dictionary.keys).sort(<)
+
+            
+        } else if SegmentedControlBar.selectedIndex == 4 {
+            dictionary = dictionaryGeneral[4]
+            sortedKeys = Array(dictionary.keys).sort(<)
+
+        } else if SegmentedControlBar.selectedIndex == 5 {
+            dictionary = dictionaryGeneral[5]
+            sortedKeys = Array(dictionary.keys).sort(<)
+
+            
+        }
+
+        return sortedKeys[section]
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if SegmentedControlBar.selectedIndex == 0 {
             dictionary = dictionaryGeneral[0]
             sortedKeys = Array(dictionary.keys).sort(<)
@@ -45,13 +79,16 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
             dictionary = dictionaryGeneral[1]
             sortedKeys = Array(dictionary.keys).sort(<)
             
+            
         } else if SegmentedControlBar.selectedIndex == 2 {
             dictionary = dictionaryGeneral[2]
             sortedKeys = Array(dictionary.keys).sort(<)
             
+            
         } else if SegmentedControlBar.selectedIndex == 3{
             dictionary = dictionaryGeneral[3]
             sortedKeys = Array(dictionary.keys).sort(<)
+            
             
         } else if SegmentedControlBar.selectedIndex == 4 {
             dictionary = dictionaryGeneral[4]
@@ -61,15 +98,8 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
             dictionary = dictionaryGeneral[5]
             sortedKeys = Array(dictionary.keys).sort(<)
             
+            
         }
-    }
-    
-    
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sortedKeys[section]
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return sortedKeys.count
     }
     
@@ -92,17 +122,100 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
             cell = tableView.dequeueReusableCellWithIdentifier("myCell") as? EventTableCellView
             
         }
-        if ( Palestra![indexPath.row].EventType == "Palestra"){
-            cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
+        if SegmentedControlBar.selectedIndex == 0 {
+            dictionary = dictionaryGeneral[0]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            if ( Palestra![indexPath.row].EventType == "Palestra"){
+                cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
+            }
+            if ( Palestra![indexPath.row].EventType == "WorkShop"){
+                cell?.eventType.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
+            }
+            cell?.eventType.text = Palestra![indexPath.row].EventType
+            
+            cell?.eventDescription.text = Palestra![indexPath.row].EventTitle
+            cell?.EventHour.text = Palestra![indexPath.row].EventLocation
+            
+            
+        } else if SegmentedControlBar.selectedIndex == 1 {
+            dictionary = dictionaryGeneral[1]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            if ( Palestra![indexPath.row].EventType == "Palestra"){
+                cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
+            }
+            if ( Palestra![indexPath.row].EventType == "WorkShop"){
+                cell?.eventType.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
+            }
+            cell?.eventType.text = Palestra![indexPath.row].EventType
+            
+            cell?.eventDescription.text = Palestra![indexPath.row].EventTitle
+            cell?.EventHour.text = Palestra![indexPath.row].EventLocation
+            
+            
+        } else if SegmentedControlBar.selectedIndex == 2 {
+            dictionary = dictionaryGeneral[2]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            if ( Palestra![indexPath.row].EventType == "Palestra"){
+                cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
+            }
+            if ( Palestra![indexPath.row].EventType == "WorkShop"){
+                cell?.eventType.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
+            }
+            cell?.eventType.text = Palestra![indexPath.row].EventType
+            
+            cell?.eventDescription.text = Palestra![indexPath.row].EventTitle
+            cell?.EventHour.text = Palestra![indexPath.row].EventLocation
+            
+            
+        } else if SegmentedControlBar.selectedIndex == 3{
+            dictionary = dictionaryGeneral[3]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            if ( Palestra![indexPath.row].EventType == "Palestra"){
+                cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
+            }
+            if ( Palestra![indexPath.row].EventType == "WorkShop"){
+                cell?.eventType.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
+            }
+            cell?.eventType.text = Palestra![indexPath.row].EventType
+            
+            cell?.eventDescription.text = Palestra![indexPath.row].EventTitle
+            cell?.EventHour.text = Palestra![indexPath.row].EventLocation
+            
+            
+        } else if SegmentedControlBar.selectedIndex == 4 {
+            dictionary = dictionaryGeneral[4]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            if ( Palestra![indexPath.row].EventType == "Palestra"){
+                cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
+            }
+            if ( Palestra![indexPath.row].EventType == "WorkShop"){
+                cell?.eventType.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
+            }
+            cell?.eventType.text = Palestra![indexPath.row].EventType
+            
+            cell?.eventDescription.text = Palestra![indexPath.row].EventTitle
+            cell?.EventHour.text = Palestra![indexPath.row].EventLocation
+            
+            
+        } else if SegmentedControlBar.selectedIndex == 5 {
+            dictionary = dictionaryGeneral[5]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            if ( Palestra![indexPath.row].EventType == "Palestra"){
+                cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
+            }
+            if ( Palestra![indexPath.row].EventType == "WorkShop"){
+                cell?.eventType.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
+            }
+            cell?.eventType.text = Palestra![indexPath.row].EventType
+            
+            cell?.eventDescription.text = Palestra![indexPath.row].EventTitle
+            cell?.EventHour.text = Palestra![indexPath.row].EventLocation
+            
         }
-        if ( Palestra![indexPath.row].EventType == "WorkShop"){
-            cell?.eventType.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
-        }
-        cell?.eventType.text = Palestra![indexPath.row].EventType
-      
-        cell?.eventDescription.text = Palestra![indexPath.row].EventTitle
-        cell?.EventHour.text = Palestra![indexPath.row].EventLocation
+
         
+        
+    
         
         
         return cell!
@@ -110,13 +223,47 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        if SegmentedControlBar.selectedIndex == 0 {
+            dictionary = dictionaryGeneral[0]
+            sortedKeys = Array(dictionary.keys).sort(<)
+ 
+            
+        } else if SegmentedControlBar.selectedIndex == 1 {
+            dictionary = dictionaryGeneral[1]
+            sortedKeys = Array(dictionary.keys).sort(<)
+
+            
+        } else if SegmentedControlBar.selectedIndex == 2 {
+            dictionary = dictionaryGeneral[2]
+            sortedKeys = Array(dictionary.keys).sort(<)
+
+            
+        } else if SegmentedControlBar.selectedIndex == 3{
+            dictionary = dictionaryGeneral[3]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            
+        } else if SegmentedControlBar.selectedIndex == 4 {
+            dictionary = dictionaryGeneral[4]
+            sortedKeys = Array(dictionary.keys).sort(<)
+
+            
+        } else if SegmentedControlBar.selectedIndex == 5 {
+            dictionary = dictionaryGeneral[5]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            
+        }
+
+        
         let keys = sortedKeys
         let key = keys[section]
         let numberOfRows = dictionary[key]
-        return numberOfRows!.count
+       return numberOfRows!.count
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
         
         let selectIndexPath = tableView.indexPathForSelectedRow
         let eventDetailsViewController = segue.destinationViewController as? ActivityDetailController
@@ -133,9 +280,8 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     
     
-    @IBAction func SegmentedControlBarAction(sender: AnyObject?) {
-    //  self.tableView.reloadData()
-
+    @IBAction func SegmentedControlBarAction(sender: AnyObject) {
+         tableView.reloadData()
     }
 
     
