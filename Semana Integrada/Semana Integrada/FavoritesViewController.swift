@@ -20,7 +20,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dictionary = scheduleDAO.generatePalestras();
+      //  dictionary = scheduleDAO.generatePalestras();
         
         
     }

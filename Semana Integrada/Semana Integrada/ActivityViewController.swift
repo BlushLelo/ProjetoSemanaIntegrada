@@ -8,21 +8,60 @@
 
 import UIKit
 
-class ActivyViewController: UIViewController,UITableViewDataSource{
+class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var SegmentedControlBar: SegmentedControl!
     
     //let vet = ["Joao","Rodrigo","Carradas"]
     let scheduleDAO = ScheduleDAO()
     var dictionary = [String:[Schedule]]()
+    var dictionaryGeneral = [ [String:[Schedule]] ]()
     var sortedKeys = [String]()
     
+   
+   
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        SegmentedControlBar.addTarget(self, action: "test:", forControlEvents: .ValueChanged)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dictionary = scheduleDAO.generatePalestras();
-        sortedKeys = Array(dictionary.keys).sort(<)
+        dictionaryGeneral = scheduleDAO.generatePalestras();
+        SegmentedControlBar.items = ["Seg","Ter","Qua","Qui","Sex","Sab"]
+        SegmentedControlBar.selectedIndex = 0
+        
+    }
+    
+    func test (sender: AnyObject?) {
+        if SegmentedControlBar.selectedIndex == 0 {
+            dictionary = dictionaryGeneral[0]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            
+        } else if SegmentedControlBar.selectedIndex == 1 {
+            dictionary = dictionaryGeneral[1]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            
+        } else if SegmentedControlBar.selectedIndex == 2 {
+            dictionary = dictionaryGeneral[2]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            
+        } else if SegmentedControlBar.selectedIndex == 3{
+            dictionary = dictionaryGeneral[3]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            
+        } else if SegmentedControlBar.selectedIndex == 4 {
+            dictionary = dictionaryGeneral[4]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            
+        } else if SegmentedControlBar.selectedIndex == 5 {
+            dictionary = dictionaryGeneral[5]
+            sortedKeys = Array(dictionary.keys).sort(<)
+            
+        }
     }
     
     
@@ -89,6 +128,13 @@ class ActivyViewController: UIViewController,UITableViewDataSource{
         eventDetailsViewController?.event = dictionary[hourKey]![selectIndexPath!.row]
         
         
+
+    }
+    
+    
+    
+    @IBAction func SegmentedControlBarAction(sender: AnyObject?) {
+    //  self.tableView.reloadData()
 
     }
 

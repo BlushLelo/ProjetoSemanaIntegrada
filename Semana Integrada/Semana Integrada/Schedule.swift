@@ -13,6 +13,7 @@ class Schedule {
     var EventTitle:String?
     var EventHour:String?
     var EventType:String?
+    var EventDay:String?
     var EventLocation:String?
     var favorite:Bool?
     
