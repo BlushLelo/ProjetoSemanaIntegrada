@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Activy View Controller-->
+        <!--Atividades-->
         <scene sceneID="g4e-5V-SLI">
             <objects>
                 <viewController id="Gua-2f-EvQ" customClass="ActivyViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,9 +71,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="cBl-sI-CAn">
-                        <nil key="title"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Atividades" id="cBl-sI-CAn"/>
                     <connections>
                         <outlet property="SegmentedControlBar" destination="Wlh-1f-vdv" id="1rv-yg-aGH"/>
                         <outlet property="tableView" destination="Qef-WR-Ywa" id="n2k-iJ-b7X"/>
