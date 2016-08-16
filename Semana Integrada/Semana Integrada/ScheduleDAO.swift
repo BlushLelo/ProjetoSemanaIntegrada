@@ -9,10 +9,10 @@
 import Foundation
 
 class ScheduleDAO : EventTableCellView {
+ 
+
     
-    
-    
-    var Teste = Schedule()
+    var Dictionary = [String:[Schedule]]()
     var palestrasSeg = [String:[Schedule]]()
     var palestrasTer = [String:[Schedule]]()
     var palestrasQua = [String:[Schedule]]()
@@ -20,8 +20,9 @@ class ScheduleDAO : EventTableCellView {
     var palestrasSex = [String:[Schedule]]()
     var palestrasSab = [String:[Schedule]]()
     var palestrasGerais = [ [String:[Schedule]] ]()
-    
     var ListaDePalestras = [Schedule]()
+    
+    
     
     
     func generatePalestras() -> [ [String:[Schedule]] ] {
@@ -110,6 +111,16 @@ class ScheduleDAO : EventTableCellView {
         palestrasGerais.append(palestrasSab)
         
         return palestrasGerais
+    }
+    
+    func getDictionary(DictionaryDePalestras:[[String:[Schedule]]],selectedIndex:Int) -> [String:[Schedule]] {
+        if (selectedIndex < 6){
+        Dictionary = DictionaryDePalestras[selectedIndex]
+        
+        } else {
+            
+        }
+        return Dictionary
     }
     
 }

@@ -47,10 +47,10 @@ class SplashScreenAnimation: UIViewController {
         
        
         
-    self.performSelector("show", withObject: nil, afterDelay: 3.6)// depois de 3 segundo aparece o logo da puc
+    self.performSelector(#selector(SplashScreenAnimation.show), withObject: nil, afterDelay: 3.6)// depois de 3 segundo aparece o logo da puc
         
         
-    self.performSelector("nextView", withObject: imageSplashScreen, afterDelay: 6)//seleciono uma view para a animação, depois vai para a atividades
+    self.performSelector(#selector(SplashScreenAnimation.nextView), withObject: imageSplashScreen, afterDelay: 6)//seleciono uma view para a animação, depois vai para a atividades
         
         
         
