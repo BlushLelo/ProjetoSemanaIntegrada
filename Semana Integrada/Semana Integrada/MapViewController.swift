@@ -17,9 +17,13 @@ class MapViewController: UIViewController, UIScrollViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Mapa"
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.10, green: 0.74, blue: 0.61, alpha: 1.0);
         
         
-        
+          
         imageView = UIImageView(image: UIImage(named: "map_full1.png"))
         
         backgroundView = UIView(frame: imageView.frame)

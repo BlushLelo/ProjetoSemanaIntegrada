@@ -23,6 +23,11 @@ class ActivyViewController: UIViewController,UITableViewDataSource{
         super.viewDidLoad()
         dictionary = scheduleDAO.generatePalestras();
         sortedKeys = Array(dictionary.keys).sort(<)
+        
+        navigationItem.title = "Atividades"
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.10, green: 0.74, blue: 0.61, alpha: 1.0);
     }
     
     

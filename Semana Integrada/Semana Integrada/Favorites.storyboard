@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dtx-Bd-7bH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NFc-No-2c6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,9 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Favorites View Controller-->
+        <!--Favoritos-->
         <scene sceneID="vdQ-g7-9J9">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DZ5-Qd-FEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Dtx-Bd-7bH" customClass="FavoritesViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kq5-JF-JLw"/>
@@ -40,8 +41,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HTG-Op-mY4" firstAttribute="top" secondItem="Zoc-FH-55A" secondAttribute="topMargin" id="ME3-fg-V6h"/>
+                            <constraint firstItem="pze-Y5-qgF" firstAttribute="top" secondItem="HTG-Op-mY4" secondAttribute="bottom" id="S6s-bh-w0Z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HTG-Op-mY4" secondAttribute="trailing" constant="-20" id="iv6-Mi-RXA"/>
-                            <constraint firstItem="pze-Y5-qgF" firstAttribute="top" secondItem="HTG-Op-mY4" secondAttribute="bottom" id="lF0-LQ-JR6"/>
                             <constraint firstItem="HTG-Op-mY4" firstAttribute="leading" secondItem="Zoc-FH-55A" secondAttribute="leadingMargin" constant="-20" id="pxm-cd-v5H"/>
                         </constraints>
                         <variation key="default">
@@ -49,7 +50,6 @@
                                 <exclude reference="HTG-Op-mY4"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="lF0-LQ-JR6"/>
                                 <exclude reference="ME3-fg-V6h"/>
                                 <exclude reference="iv6-Mi-RXA"/>
                                 <exclude reference="pxm-cd-v5H"/>
@@ -60,17 +60,32 @@
                                 <include reference="HTG-Op-mY4"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="lF0-LQ-JR6"/>
                                 <include reference="ME3-fg-V6h"/>
                                 <include reference="iv6-Mi-RXA"/>
                                 <include reference="pxm-cd-v5H"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Favoritos" id="qIB-mj-FtL"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DZ5-Qd-FEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604.5" y="143.25"/>
+            <point key="canvasLocation" x="759" y="-430.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eTj-Mm-uqO">
+            <objects>
+                <navigationController id="NFc-No-2c6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y2d-gd-EnL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Dtx-Bd-7bH" kind="relationship" relationship="rootViewController" id="ogE-g5-Au6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DvX-Aw-EaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="27" y="-424.5"/>
         </scene>
     </scenes>
 </document>

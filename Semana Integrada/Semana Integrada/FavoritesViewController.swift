@@ -21,6 +21,10 @@ class FavoritesViewController: UIViewController, UITableViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         dictionary = scheduleDAO.generatePalestras();
+     
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.10, green: 0.74, blue: 0.61, alpha: 1.0);
         
         
     }
@@ -51,15 +55,15 @@ class FavoritesViewController: UIViewController, UITableViewDataSource{
     }
     
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sortedKeys[section]
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return sortedKeys.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
         //let cell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath)
@@ -83,12 +87,12 @@ class FavoritesViewController: UIViewController, UITableViewDataSource{
         
         
         if ( Palestra![indexPath.row].EventType == "Palestra" ){
-            cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
+         cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
         }
         
         
         if ( Palestra![indexPath.row].EventType == "WorkShop" ){
-            cell?.eventType.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
+          cell?.eventType.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
         }
         cell?.eventType.text = Palestra![indexPath.row].EventType
         
@@ -104,7 +108,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource{
     
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let keys = sortedKeys
         let key = keys[section]
         let numberOfRows = favoriteDictionary[key]

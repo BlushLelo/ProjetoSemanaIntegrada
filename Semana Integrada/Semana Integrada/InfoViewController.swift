@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import QuartzCore
+
+
 
 class InfoViewController :UITableViewController{
     
@@ -17,26 +20,29 @@ class InfoViewController :UITableViewController{
         
                 self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.10, green: 0.74, blue: 0.61, alpha: 1.0);
         
+        }
     
-    }
+   
+    @IBAction func SiteButton(sender: AnyObject) {
     
-    @IBAction func SiteButton(sender: UIButton) {
-        let url = NSURL(string: "https://semanaintegrada.com.br")
-        UIApplication.sharedApplication().openURL(url!)
-
-    }
-    
-    @IBAction func PhoneButton(sender: AnyObject) {   // or UIObject 
-        
-        
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://0800 728 7822")!)
-        
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://www.semanaintegrada.com.br")!)
     }
     
     
+   
+        
+    @IBAction func PhoneButton(sender: AnyObject) {
     
+        
+            let numerocel = NSURL(string: "tel://080072878228")
+            UIApplication.sharedApplication().openURL(numerocel!)
+        
     
+    }
     
+   
+    
+ 
 }
 
 
