@@ -21,20 +21,24 @@ class InfoViewController :UITableViewController{
     
     }
     
-    @IBAction func SiteButton(sender: UIButton) {
-        let url = NSURL(string: "https://semanaintegrada.com.br")
+    
+    @IBAction func SiteButton(sender: AnyObject) {
+    
+        let url = NSURL(string: "http://semanaintegrada.com.br/")
         UIApplication.sharedApplication().openURL(url!)
-
     }
     
-    @IBAction func PhoneButton(sender: AnyObject) {   // or UIObject 
+    
+   
         
         
+    @IBAction func PhoneButton(sender: AnyObject) {
+    
         UIApplication.sharedApplication().openURL(NSURL(string: "tel://0800 728 7822")!)
         
+    
+    
     }
-    
-    
     
     
     
