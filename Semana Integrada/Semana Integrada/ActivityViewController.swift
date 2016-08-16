@@ -104,6 +104,18 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         return cell!
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        dictionarySelect(SegmentedControlBar.selectedIndex)
+        let selectIndexPath = sender as! NSIndexPath
+        let eventDetailsViewController = segue.destinationViewController as? ActivityDetailController
+        
+        let keys = sortedKeys
+        
+        let hourKey = keys[selectIndexPath.section]
+        
+        eventDetailsViewController?.event = dictionary[hourKey]![selectIndexPath.row]
+        
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         dictionarySelect(SegmentedControlBar.selectedIndex)
@@ -120,17 +132,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let selectIndexPath = sender as! NSIndexPath
-        
-        let eventDetailsViewController = segue.destinationViewController as? ActivityDetailController
-        
-        let keys = Array(dictionary.keys)
-        
-        let hourKey = keys[selectIndexPath.section]
-        
-        eventDetailsViewController?.event = dictionary[hourKey]![selectIndexPath.row]
-    }
+
     
     
     
