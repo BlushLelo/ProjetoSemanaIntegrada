@@ -35,6 +35,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         
        //
+        navigationItem.title = "Atividades"
         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.10, green: 0.74, blue: 0.61, alpha: 1.0); // Codigo para mudar a cor da Barra com o Titulo da tela
@@ -49,6 +50,8 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         SegmentedControlBar.items = ["Seg","Ter","Qua","Qui","Sex","Sab"]
         SegmentedControlBar.selectedIndex = 0
         swipe()
+        
+        
     }
   
 
