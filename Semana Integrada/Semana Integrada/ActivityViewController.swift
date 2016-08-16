@@ -20,6 +20,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     
     
+    
     //let vet = ["Joao","Rodrigo","Carradas"]
     let scheduleDAO = ScheduleDAO()
     var dictionary = [String:[Schedule]]()
@@ -96,6 +97,14 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         cell?.buttontappedAction = {
         cell -> Void in
             Palestra![indexPath.row].favorite = true
+            
+            
+            let pushNotification = UIAlertController(title: "", message: "Para se inscrever nesta atividade,acesse o site da PUC.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            pushNotification.addAction(UIAlertAction(title: "Depois", style: UIAlertActionStyle.Default, handler: nil))
+            pushNotification.addAction(UIAlertAction(title: "Acessar", style: UIAlertActionStyle.Default, handler: self.openSite))// nao sei porque tem q ser self e nao passar parametro, mas funciona
+                
+            self.presentViewController(pushNotification, animated: true, completion: nil)
             
         }
         
@@ -184,6 +193,10 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     
 
-    
+    func openSite(alert:UIAlertAction!){
+        let url = NSURL(string: "http://semanaintegrada.com.br/")
+        UIApplication.sharedApplication().openURL(url!)
+
+    }
     
 }
