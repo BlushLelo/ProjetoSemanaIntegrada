@@ -7,30 +7,37 @@
  "EventLocation": "Dom Gilberto"
  },
  {
+ "EventTitle": "WorkShop UI/UX Louco",
+ "EventHour": "12:00",
+ "EventDay": "Seg",
+ "EventType": "WorkShop",
+ "EventLocation": "Lema"
+ },
+ {
  "EventTitle": "IOT",
  "EventHour": "09:00",
- "EventDay": "Ter",
+ "EventDay": "Seg",
  "EventType": "Palestra",
  "EventLocation": "Dom Gilberto"
  },
  {
  "EventTitle": "SAP",
  "EventHour": "11:00",
- "EventDay": "Qua",
+ "EventDay": "Seg",
  "EventType": "Palestra",
  "EventLocation": "H11 Sala 06"
  },
  {
  "EventTitle": "NODEJs",
  "EventHour": "10:00",
- "EventDay": "Qui",
+ "EventDay": "Seg",
  "EventType": "Palestra",
  "EventLocation": "H08 Sala 08"
  },
  {
  "EventTitle": "Campeonato de CS",
  "EventHour": "13:00",
- "EventDay": "Sex",
+ "EventDay": "Seg",
  "EventType": "Campeonato",
  "EventLocation": "H11 Sala 32"
  },

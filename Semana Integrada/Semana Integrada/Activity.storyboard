@@ -39,13 +39,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Pcd-xA-nmH" kind="show" id="rjz-R7-icM"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Gua-2f-EvQ" id="84f-tx-HZQ"/>
+                                    <outlet property="delegate" destination="Gua-2f-EvQ" id="m3n-8j-uce"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -76,7 +74,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="SegmentedControlBar" destination="Wlh-1f-vdv" id="1rv-yg-aGH"/>
-                        <outlet property="tableView" destination="Qef-WR-Ywa" id="n2k-iJ-b7X"/>
+                        <outlet property="tableView" destination="hka-J7-I5G" id="nKd-i9-pqt"/>
+                        <segue destination="Pcd-xA-nmH" kind="show" identifier="DetailSegue" id="hXS-02-wkF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eV-pQ-kji" userLabel="First Responder" sceneMemberID="firstResponder"/>

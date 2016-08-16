@@ -9,6 +9,8 @@
 import Foundation
 
 class Schedule {
+ 
+
     
     var EventTitle:String?
     var EventHour:String?
@@ -16,5 +18,7 @@ class Schedule {
     var EventDay:String?
     var EventLocation:String?
     var favorite:Bool?
+    
+   
     
 }

@@ -10,8 +10,15 @@ import UIKit
 
 class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var SegmentedControlBar: SegmentedControl!
+    @IBAction func SegmentedControlBarAction(sender: AnyObject?) {
+        self.tableView.reloadData()
+        
+    }
+    
+    
     
     //let vet = ["Joao","Rodrigo","Carradas"]
     let scheduleDAO = ScheduleDAO()
@@ -24,62 +31,29 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        SegmentedControlBar.addTarget(self, action: "test:", forControlEvents: .ValueChanged)
+        
         
     }
     
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         dictionaryGeneral = scheduleDAO.generatePalestras();
         SegmentedControlBar.items = ["Seg","Ter","Qua","Qui","Sex","Sab"]
         SegmentedControlBar.selectedIndex = 0
-        
-        
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: "rightSwipe:")
-        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
-        self.view.addGestureRecognizer(swipeRight)
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: "leftSwipe:")
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
-        self.view.addGestureRecognizer(swipeLeft)
-        
-        
+        swipe()
     }
-    
-    func test (sender: AnyObject?) {
-        if SegmentedControlBar.selectedIndex == 0 {
-            dictionary = dictionaryGeneral[0]
-            sortedKeys = Array(dictionary.keys).sort(<)
-            
-        } else if SegmentedControlBar.selectedIndex == 1 {
-            dictionary = dictionaryGeneral[1]
-            sortedKeys = Array(dictionary.keys).sort(<)
-            
-        } else if SegmentedControlBar.selectedIndex == 2 {
-            dictionary = dictionaryGeneral[2]
-            sortedKeys = Array(dictionary.keys).sort(<)
-            
-        } else if SegmentedControlBar.selectedIndex == 3{
-            dictionary = dictionaryGeneral[3]
-            sortedKeys = Array(dictionary.keys).sort(<)
-            
-        } else if SegmentedControlBar.selectedIndex == 4 {
-            dictionary = dictionaryGeneral[4]
-            sortedKeys = Array(dictionary.keys).sort(<)
-            
-        } else if SegmentedControlBar.selectedIndex == 5 {
-            dictionary = dictionaryGeneral[5]
-            sortedKeys = Array(dictionary.keys).sort(<)
-            
-        }
-    }
-    
+  
+
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        dictionarySelect(SegmentedControlBar.selectedIndex)
         return sortedKeys[section]
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        dictionarySelect(SegmentedControlBar.selectedIndex)
         return sortedKeys.count
     }
     
@@ -87,6 +61,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         
         //let cell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath)
+        dictionarySelect(SegmentedControlBar.selectedIndex)
         let keys = sortedKeys
         let key = keys[indexPath.section]
         let Palestra = dictionary[key]
@@ -102,6 +77,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
             cell = tableView.dequeueReusableCellWithIdentifier("myCell") as? EventTableCellView
             
         }
+        
         if ( Palestra![indexPath.row].EventType == "Palestra"){
             cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
         }
@@ -112,6 +88,11 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
       
         cell?.eventDescription.text = Palestra![indexPath.row].EventTitle
         cell?.EventHour.text = Palestra![indexPath.row].EventLocation
+        cell?.buttontappedAction = {
+        cell -> Void in
+            Palestra![indexPath.row].favorite = true
+            
+        }
         
         
         
@@ -120,39 +101,55 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        dictionarySelect(SegmentedControlBar.selectedIndex)
         let keys = sortedKeys
         let key = keys[section]
         let numberOfRows = dictionary[key]
         return numberOfRows!.count
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("DetailSegue", sender: indexPath)
         
-        let selectIndexPath = tableView.indexPathForSelectedRow
+    }
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let selectIndexPath = sender as! NSIndexPath
+        
         let eventDetailsViewController = segue.destinationViewController as? ActivityDetailController
         
         let keys = Array(dictionary.keys)
         
-        let hourKey = keys[selectIndexPath!.section]
+        let hourKey = keys[selectIndexPath.section]
         
-        eventDetailsViewController?.event = dictionary[hourKey]![selectIndexPath!.row]
-        
-        
-
+        eventDetailsViewController?.event = dictionary[hourKey]![selectIndexPath.row]
     }
     
     
     
-    @IBAction func SegmentedControlBarAction(sender: AnyObject?) {
-    //  self.tableView.reloadData()
 
+    func swipe () {
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(ActivyViewController.rightSwipe(_:)))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ActivyViewController.leftSwipe(_:)))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        self.view.addGestureRecognizer(swipeLeft)
+        
     }
+    
     
     func rightSwipe(gestureReconizer: UISwipeGestureRecognizer) {
         
         if self.SegmentedControlBar.selectedIndex > 0 {
             
             self.SegmentedControlBar.selectedIndex -= 1
+            
+            self.tableView.reloadData()
+            
         }
         else{
             
@@ -167,10 +164,19 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
         else{
             self.SegmentedControlBar.selectedIndex += 1
+            
+            self.tableView.reloadData()
         }
     }
 
     
+    func dictionarySelect(index:Int) {
+            dictionary = scheduleDAO.getDictionary(dictionaryGeneral, selectedIndex: index)
+            sortedKeys = Array(dictionary.keys).sort(<)
+    }
+    
+    
+
     
     
 }

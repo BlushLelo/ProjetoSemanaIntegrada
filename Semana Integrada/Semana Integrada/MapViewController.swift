@@ -82,7 +82,7 @@ class MapViewController: UIViewController, UIScrollViewDelegate{
     
     
     func setupGestureRecognizer() {
-        let doubleTap = UITapGestureRecognizer(target: self, action: "handleDoubleTap:")
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(MapViewController.handleDoubleTap(_:)))
         doubleTap.numberOfTapsRequired = 2
         scrollView.addGestureRecognizer(doubleTap)
     }

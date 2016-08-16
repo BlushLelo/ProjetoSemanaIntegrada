@@ -334,20 +334,45 @@ CEP. 13086-900</string>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANQ-q9-phu">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="77" id="G3o-UF-9jJ"/>
+                                                        <constraint firstAttribute="width" constant="72" id="v1G-WG-44v"/>
+                                                    </constraints>
                                                     <state key="normal" title="Button" image="logo_venturus"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="164" y="142" width="72" height="77"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="G3o-UF-9jJ"/>
+                                                            <exclude reference="v1G-WG-44v"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="G3o-UF-9jJ"/>
+                                                            <include reference="v1G-WG-44v"/>
+                                                        </mask>
                                                     </variation>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ANQ-q9-phu" firstAttribute="centerX" secondItem="tDU-va-8D2" secondAttribute="centerX" id="Vsx-8x-zah"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ANQ-q9-phu" secondAttribute="bottom" constant="5" id="tS3-Yf-EYf"/>
+                                            </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="ANQ-q9-phu"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="Vsx-8x-zah"/>
+                                                    <exclude reference="tS3-Yf-EYf"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="ANQ-q9-phu"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="Vsx-8x-zah"/>
+                                                    <include reference="tS3-Yf-EYf"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

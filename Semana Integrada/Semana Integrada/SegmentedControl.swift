@@ -101,7 +101,7 @@ import UIKit
         
         
         for index in 0...labels.count - 1 {
-            var label = labels[index]
+            let label = labels[index]
             
             let xPosition = CGFloat(index) * labelWidth
             label.frame = CGRectMake(xPosition , 0, labelWidth , labelHeight)
@@ -139,7 +139,7 @@ import UIKit
         
         if selectedIndex < 6 {
             
-            var label = labels[selectedIndex]
+            let label = labels[selectedIndex]
             self.thumbView.frame = label.frame
             
         }else{

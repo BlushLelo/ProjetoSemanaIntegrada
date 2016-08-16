@@ -12,6 +12,8 @@ class EventTableCellView:UITableViewCell{
     
     var a = 0
     
+    var buttontappedAction : ((UITableViewCell) -> Void)?
+    
     @IBOutlet weak var eventType: UILabel!
     
     @IBOutlet weak var eventDescription: UILabel!
@@ -19,6 +21,8 @@ class EventTableCellView:UITableViewCell{
     @IBOutlet weak var eventFavorite: UIButton!
     
     @IBAction func favoriteButton(sender: AnyObject) {
+        
+        buttontappedAction!(self)
         
         
         if(a == 0){
@@ -45,4 +49,5 @@ class EventTableCellView:UITableViewCell{
     }
    
     @IBOutlet weak var EventHour: UILabel!
+    
 }
