@@ -10,7 +10,6 @@
         <!--Favoritos-->
         <scene sceneID="vdQ-g7-9J9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DZ5-Qd-FEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Dtx-Bd-7bH" customClass="FavoritesViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kq5-JF-JLw"/>
@@ -68,6 +67,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Favoritos" id="qIB-mj-FtL"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DZ5-Qd-FEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="759" y="-430.5"/>
         </scene>
