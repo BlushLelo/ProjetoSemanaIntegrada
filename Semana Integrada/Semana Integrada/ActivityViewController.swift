@@ -31,19 +31,18 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
-       //
         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
-        
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.10, green: 0.74, blue: 0.61, alpha: 1.0); // Codigo para mudar a cor da Barra com o Titulo da tela
-        
     }
     
+    override func viewDidAppear(animated: Bool) {
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 58, 0)
+    }
     
   
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         dictionaryGeneral = scheduleDAO.generatePalestras();
         SegmentedControlBar.items = ["Seg","Ter","Qua","Qui","Sex","Sab"]
         SegmentedControlBar.selectedIndex = 0
@@ -108,6 +107,11 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         dictionarySelect(SegmentedControlBar.selectedIndex)
         let selectIndexPath = sender as! NSIndexPath
         let eventDetailsViewController = segue.destinationViewController as? ActivityDetailController
+     
+        let backItem = UIBarButtonItem()
+        backItem.title = "Voltar"
+        navigationItem.backBarButtonItem = backItem
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         let keys = sortedKeys
         

@@ -50,7 +50,9 @@
                         <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="hka-J7-I5G" secondAttribute="bottom" constant="-46" id="Oat-Dh-UHq"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="hka-J7-I5G" secondAttribute="bottom" constant="-46" id="Oat-Dh-UHq">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="hka-J7-I5G" firstAttribute="top" secondItem="Wlh-1f-vdv" secondAttribute="bottom" constant="8" symbolic="YES" id="Pd3-Xk-Den"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wlh-1f-vdv" secondAttribute="trailing" constant="-14" id="Qs9-KG-ekH"/>
                             <constraint firstItem="hka-J7-I5G" firstAttribute="leading" secondItem="Qef-WR-Ywa" secondAttribute="leading" id="USK-gy-aeg"/>
@@ -78,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eV-pQ-kji" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855.5" y="-100.5"/>
+            <point key="canvasLocation" x="1855.5" y="-111"/>
         </scene>
         <!--Activity Detail Controller-->
         <scene sceneID="OxQ-Em-hOL">
@@ -144,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2u-hX-6CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2629.5" y="-100.5"/>
+            <point key="canvasLocation" x="2586" y="-111"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yZy-tA-4nK">
