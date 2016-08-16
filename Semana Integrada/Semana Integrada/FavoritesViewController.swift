@@ -103,7 +103,14 @@ class FavoritesViewController: UIViewController, UITableViewDataSource{
         return cell!
     }
     
-
+    
+    func rightSwipe(gestureReconizer: UISwipeGestureRecognizer) {
+        <#code#>
+    }
+    
+    func leftSwipe(gestureReconizer: UISwipeGestureRecognizer) {
+        <#code#>
+    }
     
     
     

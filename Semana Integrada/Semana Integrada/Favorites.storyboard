@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Dtx-Bd-7bH" kind="relationship" relationship="rootViewController" id="9l0-KM-nAm"/>
+                        <segue destination="tif-w9-mvh" kind="relationship" relationship="rootViewController" id="pgk-lW-bgP"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVu-gh-mrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,70 +23,51 @@
             <point key="canvasLocation" x="-109" y="128"/>
         </scene>
         <!--Favoritos-->
-        <scene sceneID="vdQ-g7-9J9">
+        <scene sceneID="myR-qK-aae">
             <objects>
-                <viewController id="Dtx-Bd-7bH" customClass="FavoritesViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tif-w9-mvh" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Kq5-JF-JLw"/>
-                        <viewControllerLayoutGuide type="bottom" id="pze-Y5-qgF"/>
+                        <viewControllerLayoutGuide type="top" id="KOw-BY-CqK"/>
+                        <viewControllerLayoutGuide type="bottom" id="J5A-wN-Rbd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Zoc-FH-55A">
+                    <view key="view" contentMode="scaleToFill" id="W2k-kM-51F">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HTG-Op-mY4">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iWV-Zl-cR4">
+                                <rect key="frame" x="0.0" y="135" width="600" height="465"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="90" id="ezV-KF-p3q">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="mmE-3V-3tz">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ezV-KF-p3q" id="k3K-xa-Wv0">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="89"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mmE-3V-3tz" id="v2i-1z-Sw1">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Dtx-Bd-7bH" id="61G-oX-vvy"/>
-                                </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIe-gz-Llr" customClass="SegmentedControl" customModule="Semana_Integrada" customModuleProvider="target">
+                                <rect key="frame" x="20" y="72" width="560" height="50"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9iT-oD-FaK"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="HTG-Op-mY4" firstAttribute="top" secondItem="Zoc-FH-55A" secondAttribute="topMargin" id="ME3-fg-V6h"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="HTG-Op-mY4" secondAttribute="trailing" constant="-20" id="iv6-Mi-RXA"/>
-                            <constraint firstItem="pze-Y5-qgF" firstAttribute="top" secondItem="HTG-Op-mY4" secondAttribute="bottom" id="lF0-LQ-JR6"/>
-                            <constraint firstItem="HTG-Op-mY4" firstAttribute="leading" secondItem="Zoc-FH-55A" secondAttribute="leadingMargin" constant="-20" id="pxm-cd-v5H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bIe-gz-Llr" secondAttribute="trailing" id="FEc-Wo-h8e"/>
+                            <constraint firstItem="bIe-gz-Llr" firstAttribute="top" secondItem="KOw-BY-CqK" secondAttribute="bottom" constant="8" id="K30-4k-7hk"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="bIe-gz-Llr" secondAttribute="leading" id="bGm-f1-GTa"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="HTG-Op-mY4"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="lF0-LQ-JR6"/>
-                                <exclude reference="ME3-fg-V6h"/>
-                                <exclude reference="iv6-Mi-RXA"/>
-                                <exclude reference="pxm-cd-v5H"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="HTG-Op-mY4"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="lF0-LQ-JR6"/>
-                                <include reference="ME3-fg-V6h"/>
-                                <include reference="iv6-Mi-RXA"/>
-                                <include reference="pxm-cd-v5H"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Favoritos" id="IKf-pg-Ma4"/>
+                    <navigationItem key="navigationItem" title="Favoritos" id="8y6-rd-wAq"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DZ5-Qd-FEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dAy-9M-MZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604.5" y="143.25"/>
+            <point key="canvasLocation" x="561" y="128"/>
         </scene>
     </scenes>
 </document>
