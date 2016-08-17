@@ -18,7 +18,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
     }
     
-    
+   
     
     
     //let vet = ["Joao","Rodrigo","Carradas"]
@@ -43,11 +43,14 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Atividades"
     
         dictionaryGeneral = scheduleDAO.generatePalestras();
         SegmentedControlBar.items = ["Seg","Ter","Qua","Qui","Sex","Sab"]
         SegmentedControlBar.selectedIndex = 0
         swipe()
+        let a
     }
   
 
