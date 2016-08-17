@@ -81,8 +81,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="CuK-z8-fD7"/>
                                 <exclude reference="6gA-r2-3E4"/>
+                                <exclude reference="CuK-z8-fD7"/>
                                 <exclude reference="qov-4I-SaL"/>
                             </mask>
                         </variation>

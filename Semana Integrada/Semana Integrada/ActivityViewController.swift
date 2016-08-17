@@ -18,7 +18,9 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
     }
     
+    var timer = NSTimer()
     
+    var time = 10
     
     
     //let vet = ["Joao","Rodrigo","Carradas"]
@@ -48,6 +50,8 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         SegmentedControlBar.items = ["Seg","Ter","Qua","Qui","Sex","Sab"]
         SegmentedControlBar.selectedIndex = 0
         swipe()
+        
+         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("notification"), userInfo: nil, repeats: true)
     }
   
 
@@ -97,7 +101,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         cell -> Void in
             Palestra![indexPath.row].favorite = true
             
-            
+            //notifications
             let pushNotification = UIAlertController(title: "", message: "Para se inscrever nesta atividade,acesse o site da PUC.", preferredStyle: UIAlertControllerStyle.Alert)
             
             pushNotification.addAction(UIAlertAction(title: "Depois", style: UIAlertActionStyle.Default, handler: nil))
@@ -202,5 +206,40 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         UIApplication.sharedApplication().openURL(url!)
 
     }
+    
+    func getData(){
+        
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.NSHourCalendarUnit, .NSMinuteCalendarUnit], fromDate: date)
+        
+        let hour = components.hour
+        let minutes = components.minute
+
+    }
+    
+    
+    func notification(){
+        
+        time -= 1
+        
+        if time <= 0 {
+            
+        
+        var Notification = UILocalNotification()
+        
+        Notification.alertAction = "Go back to app"
+        Notification.alertBody = "Sua palestra começa em 15 minutos."
+        
+        Notification.fireDate = NSDate(timeIntervalSinceNow: 0)
+            
+            
+        UIApplication.sharedApplication().scheduleLocalNotification(Notification)
+            
+            timer.invalidate()
+        }
+        
+    }
+    
     
 }
