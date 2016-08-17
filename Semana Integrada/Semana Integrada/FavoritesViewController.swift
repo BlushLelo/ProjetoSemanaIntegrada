@@ -8,14 +8,14 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController, UITableViewDataSource{
-    
+class FavoritesViewController: UIViewController,UITableViewDataSource, UITableViewDelegate{
     
     var task:NSMutableArray! = NSMutableArray()
     let scheduleDAO = ScheduleDAO()
     var dictionary = [String:[Schedule]]()
     var sortedKeys = [String]()
     var favoriteDictionary = [String:[Schedule]]()
+    
     
     
     override func viewDidLoad() {
@@ -102,28 +102,18 @@ class FavoritesViewController: UIViewController, UITableViewDataSource{
         
         return cell!
     }
-    
-    
-    func rightSwipe(gestureReconizer: UISwipeGestureRecognizer) {
-        <#code#>
-    }
-    
-    func leftSwipe(gestureReconizer: UISwipeGestureRecognizer) {
-        <#code#>
-    }
-    
-    
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let keys = sortedKeys
-        let key = keys[section]
-        let numberOfRows = favoriteDictionary[key]
-        return numberOfRows!.count
+    let keys = sortedKeys
+    let key = keys[section]
+      let numberOfRows = favoriteDictionary[key]
+     return numberOfRows!.count
     }
-    
-    
-    
-    
-    
+
     
 }
+
+    
+    
+
+    
+
