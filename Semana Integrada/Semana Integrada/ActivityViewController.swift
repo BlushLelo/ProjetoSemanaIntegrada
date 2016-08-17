@@ -18,7 +18,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
     }
     
-    
+   
     
     
     //let vet = ["Joao","Rodrigo","Carradas"]
@@ -50,6 +50,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         SegmentedControlBar.items = ["Seg","Ter","Qua","Qui","Sex","Sab"]
         SegmentedControlBar.selectedIndex = 0
         swipe()
+        let a
     }
   
 
