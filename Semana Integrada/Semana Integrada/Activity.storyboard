@@ -142,7 +142,6 @@
                         <outlet property="labelLocation" destination="siL-vg-x8w" id="mUY-iB-Tma"/>
                         <outlet property="labelTipo" destination="piD-a3-Wfd" id="rtq-TM-mic"/>
                         <outlet property="labelTitulo" destination="WcD-Ls-ZhP" id="MC8-lu-E0P"/>
-                        <outlet property="tableView" destination="yLF-yd-p5Z" id="WC4-73-enB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2u-hX-6CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -154,17 +153,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rRc-Eo-eiY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <value key="contentSizeForViewInPopover" type="size" width="200" height="400"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="800"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0JX-Kh-Kna">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="vnD-gG-jy7">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
                         <segue destination="Gua-2f-EvQ" kind="relationship" relationship="rootViewController" id="Xqw-yH-tlr"/>
                     </connections>

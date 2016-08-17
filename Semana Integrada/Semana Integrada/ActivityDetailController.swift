@@ -35,6 +35,7 @@ class ActivityDetailController: UIViewController{
         titleLabel.text = title
         titleLabel.sizeToFit()
         
+        
         let subtitleLabel = UILabel(frame: CGRectMake(0, 18, 0, 0))
         subtitleLabel.backgroundColor = UIColor.clearColor()
         subtitleLabel.textColor = UIColor.blackColor()
