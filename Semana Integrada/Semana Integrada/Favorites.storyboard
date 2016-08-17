@@ -15,17 +15,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ac8-dY-Pk4" kind="relationship" relationship="rootViewController" id="UOk-Ll-t6x"/>
+                        <segue destination="ac8-dY-Pk4" kind="relationship" relationship="rootViewController" id="NoI-4p-BAp"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVu-gh-mrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-337.5" y="127.5"/>
         </scene>
-        <!--Activy View Controller-->
+        <!--Favoritos-->
         <scene sceneID="dKD-N7-4oK">
             <objects>
-                <viewController id="ac8-dY-Pk4" customClass="ActivyViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ac8-dY-Pk4" customClass="FavoritesViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6YY-h6-IIb"/>
                         <viewControllerLayoutGuide type="bottom" id="3qg-nL-IiF"/>
@@ -40,9 +40,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="sFr-sI-MW7"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="SegmentedControlBarAction:" destination="ac8-dY-Pk4" eventType="valueChanged" id="Kac-ez-kmY"/>
-                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eDv-l8-hML">
                                 <rect key="frame" x="0.0" y="126" width="600" height="520"/>
@@ -57,10 +54,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="ac8-dY-Pk4" id="sbC-P7-gYG"/>
-                                    <outlet property="delegate" destination="ac8-dY-Pk4" id="zYD-BJ-ax0"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -87,11 +80,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="QDU-ma-rMW"/>
-                    <connections>
-                        <outlet property="SegmentedControlBar" destination="RXy-2I-3aQ" id="TES-VM-FLp"/>
-                        <outlet property="tableView" destination="eDv-l8-hML" id="ksb-NG-VX4"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Favoritos" id="QDU-ma-rMW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vtO-Le-ekM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,7 +11,7 @@ import UIKit
 class FavoritesViewController: UIViewController,UITableViewDataSource, UITableViewDelegate{
     
     
-    @IBOutlet weak var SegmentedControlBar: SegmentedControl!
+    
     var task:NSMutableArray! = NSMutableArray()
     let scheduleDAO = ScheduleDAO()
     var dictionary = [String:[Schedule]]()
@@ -30,7 +30,7 @@ class FavoritesViewController: UIViewController,UITableViewDataSource, UITableVi
         
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.10, green: 0.74, blue: 0.61, alpha: 1.0); // Codigo para mudar a cor da Barra com o Titulo da tela
 
-        swipe()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -117,43 +117,7 @@ class FavoritesViewController: UIViewController,UITableViewDataSource, UITableVi
      return numberOfRows!.count
     }
 
-    func swipe () {
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(FavoritesViewController.rightSwipe(_:)))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
-        self.view.addGestureRecognizer(swipeRight)
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(FavoritesViewController.leftSwipe(_:)))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
-        self.view.addGestureRecognizer(swipeLeft)
-        
-    }
-    
-    
-    func rightSwipe(gestureReconizer: UISwipeGestureRecognizer) {
-        
-        if self.SegmentedControlBar.selectedIndex > 0 {
-            
-            self.SegmentedControlBar.selectedIndex -= 1
-        
-            
-        }
-        else{
-            
-        }
-    }
-    
-    func leftSwipe(gestureReconizer: UISwipeGestureRecognizer) {
-        
-        if self.SegmentedControlBar.selectedIndex >= 6 {
-            
-            
-        }
-        else{
-            self.SegmentedControlBar.selectedIndex += 1
-            
-                    }
-    }
-    
+  
     
     
 }
