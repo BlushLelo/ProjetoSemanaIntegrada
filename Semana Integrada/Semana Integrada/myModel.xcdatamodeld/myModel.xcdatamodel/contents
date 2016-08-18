@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Xcode 7.0">
+    <entity name="Schedule2" representedClassName=".Schedule2" syncable="YES">
+        <attribute name="eventDay" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventHour" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Schedule2" positionX="-63" positionY="-18" width="128" height="135"/>
+    </elements>
+</model>

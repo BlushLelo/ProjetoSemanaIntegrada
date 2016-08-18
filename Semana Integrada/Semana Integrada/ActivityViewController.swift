@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
+ 
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var SegmentedControlBar: SegmentedControl!
@@ -17,6 +19,8 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         self.tableView.reloadData()
         
     }
+    
+
     
     var timer = NSTimer()
     
@@ -26,16 +30,29 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     //let vet = ["Joao","Rodrigo","Carradas"]
     let scheduleDAO = ScheduleDAO()
     var dictionary = [String:[Schedule]]()
+    var dictionary2 = [String:[NSManagedObject]]()
     var dictionaryGeneral = [ [String:[Schedule]] ]()
+    var dictionaryGeneral2 = [ [String:[NSManagedObject]] ]()
     var sortedKeys = [String]()
     
+    
+    
    
-   
+
     
     override func viewWillAppear(animated: Bool) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+
+        
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.10, green: 0.74, blue: 0.61, alpha: 1.0); // Codigo para mudar a cor da Barra com o Titulo da tela
+        
+    
+        
+        
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -45,8 +62,12 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
   
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        let appDelegated = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegated
+        
         dictionaryGeneral = scheduleDAO.generatePalestras();
+        dictionaryGeneral2 = scheduleDAO.generatePalestras2();
         SegmentedControlBar.items = ["Seg","Ter","Qua","Qui","Sex","Sab"]
         SegmentedControlBar.selectedIndex = 0
         swipe()
@@ -57,12 +78,14 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        dictionarySelect(SegmentedControlBar.selectedIndex)
+        //dictionarySelect(SegmentedControlBar.selectedIndex)
+        dictionarySelect2(SegmentedControlBar.selectedIndex)
         return sortedKeys[section]
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        dictionarySelect(SegmentedControlBar.selectedIndex)
+        //dictionarySelect(SegmentedControlBar.selectedIndex)
+        dictionarySelect2(SegmentedControlBar.selectedIndex)
         return sortedKeys.count
     }
     
@@ -70,10 +93,18 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         
         //let cell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath)
-        dictionarySelect(SegmentedControlBar.selectedIndex)
+        
+        
+        //dictionarySelect(SegmentedControlBar.selectedIndex)
+        dictionarySelect2(SegmentedControlBar.selectedIndex)
+        
         let keys = sortedKeys
         let key = keys[indexPath.section]
-        let Palestra = dictionary[key]
+        
+        //let Palestra = dictionary[key]
+        
+        let Palestra = dictionary2[key]
+
         //cell.textLabel?.text = Palestra![indexPath.row].EventTitle
         
      
@@ -86,6 +117,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
             cell = tableView.dequeueReusableCellWithIdentifier("myCell") as? EventTableCellView
             
         }
+/*
         
         if ( Palestra![indexPath.row].EventType == "Palestra"){
             cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
@@ -110,14 +142,43 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
             self.presentViewController(pushNotification, animated: true, completion: nil)
             
         }
+  */    let eventType = Palestra![indexPath.row].valueForKey("eventType") as? String
+        let eventTitle = Palestra![indexPath.row].valueForKey("eventTitle") as? String
+        let eventLocation = Palestra![indexPath.row].valueForKey("eventLocation") as? String
         
+        if ( eventType == "Palestra"){
+            cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
+        }
+        if ( eventType == "WorkShop"){
+            cell?.eventType.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
+        }
+        cell?.eventType.text = eventType
+        
+        cell?.eventDescription.text = eventTitle
+        cell?.EventHour.text = eventLocation
+        cell?.buttontappedAction = {
+            cell -> Void in
+            Palestra![indexPath.row].setValue(true, forKey: "favorite")
+            
+            //notifications
+            let pushNotification = UIAlertController(title: "", message: "Para se inscrever nesta atividade,acesse o site da PUC.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            pushNotification.addAction(UIAlertAction(title: "Depois", style: UIAlertActionStyle.Default, handler: nil))
+            pushNotification.addAction(UIAlertAction(title: "Acessar", style: UIAlertActionStyle.Default, handler: self.openSite))// nao sei porque tem q ser self e nao passar parametro, mas funciona
+            
+            self.presentViewController(pushNotification, animated: true, completion: nil)
+            
+        }
+
         
         
         return cell!
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        dictionarySelect(SegmentedControlBar.selectedIndex)
+      //dictionarySelect(SegmentedControlBar.selectedIndex)
+        
+        dictionarySelect2(SegmentedControlBar.selectedIndex)
         let selectIndexPath = sender as! NSIndexPath
         let eventDetailsViewController = segue.destinationViewController as? ActivityDetailController
      
@@ -130,15 +191,18 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         let hourKey = keys[selectIndexPath.section]
         
-        eventDetailsViewController?.event = dictionary[hourKey]![selectIndexPath.row]
+        //eventDetailsViewController?.event = dictionary[hourKey]![selectIndexPath.row]
+        eventDetailsViewController?.event2 = dictionary2[hourKey]![selectIndexPath.row]
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        dictionarySelect(SegmentedControlBar.selectedIndex)
+        //dictionarySelect(SegmentedControlBar.selectedIndex)
+        dictionarySelect2(SegmentedControlBar.selectedIndex)
         let keys = sortedKeys
         let key = keys[section]
-        let numberOfRows = dictionary[key]
+      //  let numberOfRows = dictionary[key]
+        let numberOfRows = dictionary2[key]
         return numberOfRows!.count
     }
     
@@ -197,6 +261,11 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func dictionarySelect(index:Int) {
             dictionary = scheduleDAO.getDictionary(dictionaryGeneral, selectedIndex: index)
             sortedKeys = Array(dictionary.keys).sort(<)
+    }
+    
+    func dictionarySelect2(index:Int) {
+        dictionary2 = scheduleDAO.getDictionary2(dictionaryGeneral2, selectedIndex: index)
+        sortedKeys = Array(dictionary2.keys).sort(<)
     }
     
     

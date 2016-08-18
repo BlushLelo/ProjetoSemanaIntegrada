@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		575C488E1D661E2E0051324E /* myModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 575C488C1D661E2E0051324E /* myModel.xcdatamodeld */; };
+		575C48911D661F060051324E /* Schedule2+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C488F1D661F060051324E /* Schedule2+CoreDataProperties.swift */; };
+		575C48921D661F060051324E /* Schedule2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C48901D661F060051324E /* Schedule2.swift */; };
 		575F20681D5CD9FC001B4855 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575F20671D5CD9FC001B4855 /* Favorites.storyboard */; };
 		575F206A1D5D0D71001B4855 /* ActivityDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575F20691D5D0D71001B4855 /* ActivityDetailController.swift */; };
 		57EAD3B61D5A700500BB8E1F /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EAD3B51D5A700500BB8E1F /* SegmentedControl.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		575C488D1D661E2E0051324E /* myModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myModel.xcdatamodel; sourceTree = "<group>"; };
+		575C488F1D661F060051324E /* Schedule2+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Schedule2+CoreDataProperties.swift"; path = "Semana Integrada/Schedule2+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		575C48901D661F060051324E /* Schedule2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schedule2.swift; path = "Semana Integrada/Schedule2.swift"; sourceTree = "<group>"; };
 		575F20671D5CD9FC001B4855 /* Favorites.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		575F20691D5D0D71001B4855 /* ActivityDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailController.swift; sourceTree = "<group>"; };
 		57EAD3B51D5A700500BB8E1F /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
@@ -82,6 +88,8 @@
 		7F13E8991D46757400886F07 = {
 			isa = PBXGroup;
 			children = (
+				575C488F1D661F060051324E /* Schedule2+CoreDataProperties.swift */,
+				575C48901D661F060051324E /* Schedule2.swift */,
 				7F13E8A41D46757400886F07 /* Semana Integrada */,
 				7F13E8A31D46757400886F07 /* Products */,
 			);
@@ -109,6 +117,7 @@
 				7F13E8AE1D46757400886F07 /* LaunchScreen.storyboard */,
 				7F13E8B11D46757400886F07 /* Info.plist */,
 				7FAE0D8C1D47CA1700055B40 /* Resources */,
+				575C488C1D661E2E0051324E /* myModel.xcdatamodeld */,
 			);
 			path = "Semana Integrada";
 			sourceTree = "<group>";
@@ -257,6 +266,7 @@
 				7F13E8A81D46757400886F07 /* ViewController.swift in Sources */,
 				7F13E8BB1D4678B600886F07 /* ActitivyTabViewController.swift in Sources */,
 				7F13E8C71D46791900886F07 /* InfoTabViewController.swift in Sources */,
+				575C488E1D661E2E0051324E /* myModel.xcdatamodeld in Sources */,
 				7F6C0A7F1D491F4000DAFD7D /* splashScreenAnimation.swift in Sources */,
 				7FAE0D8A1D47C63B00055B40 /* ScheduleDAO.swift in Sources */,
 				7F13E8C51D46791000886F07 /* InfoViewController.swift in Sources */,
@@ -265,8 +275,10 @@
 				7F13E8A61D46757400886F07 /* AppDelegate.swift in Sources */,
 				7FEC4DFC1D4A887800215603 /* EventTableCellView.swift in Sources */,
 				7F13E8C11D4678EF00886F07 /* MapViewController.swift in Sources */,
+				575C48911D661F060051324E /* Schedule2+CoreDataProperties.swift in Sources */,
 				575F206A1D5D0D71001B4855 /* ActivityDetailController.swift in Sources */,
 				7FD6356C1D47E4AE00FDDB96 /* SwiftyJSON.swift in Sources */,
+				575C48921D661F060051324E /* Schedule2.swift in Sources */,
 				57EAD3B61D5A700500BB8E1F /* SegmentedControl.swift in Sources */,
 				7FAE0D881D47C56A00055B40 /* Schedule.swift in Sources */,
 			);
@@ -425,6 +437,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		575C488C1D661E2E0051324E /* myModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				575C488D1D661E2E0051324E /* myModel.xcdatamodel */,
+			);
+			currentVersion = 575C488D1D661E2E0051324E /* myModel.xcdatamodel */;
+			path = myModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7F13E89A1D46757400886F07 /* Project object */;
 }
