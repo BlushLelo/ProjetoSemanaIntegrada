@@ -17,7 +17,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         self.tableView.reloadData()
         
     }
-    
+    private var foregroundNotification: NSObjectProtocol!
     var timer = NSTimer()
     
     var time = 10
@@ -52,6 +52,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         swipe()
         
          timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("notification"), userInfo: nil, repeats: true)
+        
     }
   
 
@@ -101,13 +102,37 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         cell -> Void in
             Palestra![indexPath.row].favorite = true
             
+            //notifications implement
+            let theDate = NSDate()
+            let dateComp = NSDateComponents()
+            let calendar = NSCalendar.currentCalendar()
+          
             //notifications
+            
+            // Carradas
             let pushNotification = UIAlertController(title: "", message: "Para se inscrever nesta atividade,acesse o site da PUC.", preferredStyle: UIAlertControllerStyle.Alert)
             
             pushNotification.addAction(UIAlertAction(title: "Depois", style: UIAlertActionStyle.Default, handler: nil))
             pushNotification.addAction(UIAlertAction(title: "Acessar", style: UIAlertActionStyle.Default, handler: self.openSite))// nao sei porque tem q ser self e nao passar parametro, mas funciona
-                
+            
+            UIApplicationWillEnterForegroundNotification
             self.presentViewController(pushNotification, animated: true, completion: nil)
+            pushNotification.actions
+        
+            // Didi
+            
+            let minute = NSCalendar.currentCalendar().component(.Minute, fromDate: theDate)
+            var PalestraHora =  Palestra![indexPath.row].EventHour
+            var minutos = minute + 15
+            if (PalestraHora == minutos){
+            
+            
+            let pushNotificationBackground  = UILocalNotification()
+            
+            pushNotificationBackground.alertBody = Palestra![indexPath.row].EventTitle! + "\nA sua atividade começará em 15 minutos!"
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(pushNotificationBackground)
+            }
             
         }
         
