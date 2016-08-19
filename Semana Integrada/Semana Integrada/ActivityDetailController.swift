@@ -11,6 +11,7 @@ import UIKit
 
 class ActivityDetailController: UIViewController{
 
+    
     @IBOutlet weak var placehouranddetaisl: UILabel!
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var titlee: UILabel!
@@ -18,7 +19,8 @@ class ActivityDetailController: UIViewController{
     @IBOutlet weak var lecturer: UILabel!
     @IBOutlet weak var company: UILabel!
     @IBOutlet weak var aboutCompany: UILabel!
-    @IBOutlet weak var companyDetails: UILabel!
+    @IBOutlet weak var companyDescription: UILabel!
+    
 
     
     
@@ -66,14 +68,23 @@ class ActivityDetailController: UIViewController{
         self.navigationItem.titleView = setTitle(event.eventTitle!, subtitle: event.eventHour!)
        
         placehouranddetaisl.text = "\(event.eventLocation!) - \(event.eventHour!) | \(event.eventVacancies!) vagas"
+        
+        if ( event.eventType == "Palestra"){
+            type.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
+        }
+        if ( event.eventType == "WorkShop"){
+            type.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
+        }
+
         type.text = event.eventType
         titlee.text = event.eventTitle
         descriptionn.text = event.eventDescription
         lecturer.text = event.eventLecturer
         company.text = event.lecturerCompany
         aboutCompany.text = "Sobre a \(event.lecturerCompany!)"
-        companyDetails.text = event.companyDetails
-       
+        companyDescription.text = event.eventDescription
+        descriptionn.sizeToFit()
+        descriptionn.numberOfLines = 0;
     }
     
 }

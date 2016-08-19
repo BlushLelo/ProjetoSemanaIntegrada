@@ -115,7 +115,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favoritos" image="ic_favourites_normal" selectedImage="ic_btn_addfavorites" id="IR7-xC-eXV">
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="ic_favourites_normal" selectedImage="ic_favourites_selected" id="IR7-xC-eXV">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.10196078431372549" green="0.73725490196078436" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
@@ -181,8 +181,8 @@
     <resources>
         <image name="ic_activities_normal" width="30" height="33"/>
         <image name="ic_activities_selected" width="30" height="33"/>
-        <image name="ic_btn_addfavorites" width="23" height="21"/>
         <image name="ic_favourites_normal" width="30" height="29"/>
+        <image name="ic_favourites_selected" width="60" height="57"/>
         <image name="ic_info_normal" width="35" height="35"/>
         <image name="ic_info_selected" width="35" height="35"/>
         <image name="ic_map_normal" width="32" height="33"/>
@@ -190,5 +190,5 @@
         <image name="ic_pucc" width="246" height="47"/>
         <image name="vinheta_00071" width="605" height="693"/>
     </resources>
-    <color key="tintColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
