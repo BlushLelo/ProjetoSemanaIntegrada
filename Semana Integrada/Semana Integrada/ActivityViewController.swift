@@ -39,7 +39,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 58, 0)
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 45, 0)
     }
     
   
@@ -88,16 +88,16 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
             
         }
         
-        if ( Palestra![indexPath.row].EventType == "Palestra"){
+        if ( Palestra![indexPath.row].eventType == "Palestra"){
             cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
         }
-        if ( Palestra![indexPath.row].EventType == "WorkShop"){
+        if ( Palestra![indexPath.row].eventType == "WorkShop"){
             cell?.eventType.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
         }
-        cell?.eventType.text = Palestra![indexPath.row].EventType
+        cell?.eventType.text = Palestra![indexPath.row].eventType
       
-        cell?.eventDescription.text = Palestra![indexPath.row].EventTitle
-        cell?.EventHour.text = Palestra![indexPath.row].EventLocation
+        cell?.eventDescription.text = Palestra![indexPath.row].eventTitle
+        cell?.EventHour.text = Palestra![indexPath.row].eventLocation
         cell?.buttontappedAction = {
         cell -> Void in
             Palestra![indexPath.row].favorite = true

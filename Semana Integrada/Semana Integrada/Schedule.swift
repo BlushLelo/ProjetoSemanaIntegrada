@@ -12,12 +12,18 @@ class Schedule {
  
 
     
-    var EventTitle:String?
-    var EventHour:String?
-    var EventType:String?
-    var EventDay:String?
-    var EventLocation:String?
+    var eventTitle:String?
+    var eventHour:String?
+    var eventType:String?
+    var eventDay:String?
+    var eventLocation:String?
     var favorite:Bool?
+    var eventVacancies:String?
+    var eventDescription:String?
+    var eventLecturer:String?
+    var lecturerCompany:String?
+    var companyDetails:String?
+ 
     
    
     

@@ -48,13 +48,13 @@ class FavoritesViewController: UIViewController,UITableViewDataSource, UITableVi
             let hourEvents = dictionary[key]
             for hourEvent in hourEvents! {
                 if hourEvent.favorite == true{
-                    if var array = favoriteDictionary[hourEvent.EventHour!]{
+                    if var array = favoriteDictionary[hourEvent.eventHour!]{
                         array.append(hourEvent);
-                        favoriteDictionary[hourEvent.EventHour!] = array;
+                        favoriteDictionary[hourEvent.eventHour!] = array;
                     } else {
                         var array = [Schedule]();
                         array.append(hourEvent)
-                        favoriteDictionary[hourEvent.EventHour!] = array;
+                        favoriteDictionary[hourEvent.eventHour!] = array;
                     }
                 }
             }
@@ -78,7 +78,7 @@ class FavoritesViewController: UIViewController,UITableViewDataSource, UITableVi
         let keys = sortedKeys
         let key = keys[indexPath.section]
         let Palestra = favoriteDictionary[key]
-        //cell.textLabel?.text = Palestra![indexPath.row].EventTitle
+        //cell.textLabel?.text = Palestra![indexPath.row].eventTitle
 
         
         var cell = tableView.dequeueReusableCellWithIdentifier("myCell") as? EventTableCellView
@@ -94,18 +94,18 @@ class FavoritesViewController: UIViewController,UITableViewDataSource, UITableVi
         
         
         
-        if ( Palestra![indexPath.row].EventType == "Palestra" ){
+        if ( Palestra![indexPath.row].eventType == "Palestra" ){
             cell?.eventType.textColor = UIColor(red: 0.96, green: 0.65, blue: 0.14, alpha: 1.0)
         }
         
         
-        if ( Palestra![indexPath.row].EventType == "WorkShop" ){
+        if ( Palestra![indexPath.row].eventType == "WorkShop" ){
             cell?.eventType.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
         }
-        cell?.eventType.text = Palestra![indexPath.row].EventType
+        cell?.eventType.text = Palestra![indexPath.row].eventType
         
-        cell?.eventDescription.text = Palestra![indexPath.row].EventTitle
-        cell?.EventHour.text = Palestra![indexPath.row].EventLocation
+        cell?.eventDescription.text = Palestra![indexPath.row].eventTitle
+        cell?.EventHour.text = Palestra![indexPath.row].eventLocation
       
 
         
