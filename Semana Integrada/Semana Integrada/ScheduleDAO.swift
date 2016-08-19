@@ -34,70 +34,75 @@ class ScheduleDAO : EventTableCellView {
         for i in myJson{
             let test = i.1
             let Palestra = Schedule();
-            Palestra.EventTitle = test["EventTitle"].stringValue
-            Palestra.EventHour = test["EventHour"].stringValue
-            Palestra.EventType = test["EventType"].stringValue
-            Palestra.EventLocation = test["EventLocation"].stringValue
-            Palestra.EventDay = test["EventDay"].stringValue
+            Palestra.eventTitle = test["EventTitle"].stringValue
+            Palestra.eventHour = test["EventHour"].stringValue
+            Palestra.eventType = test["EventType"].stringValue
+            Palestra.eventLocation = test["EventLocation"].stringValue
+            Palestra.eventDay = test["EventDay"].stringValue
+            Palestra.eventLecturer = test["EventLecturer"].stringValue
+            Palestra.eventVacancies = test["EventVacancies"].stringValue
+            Palestra.lecturerCompany = test["LecturerCompany"].stringValue
+            Palestra.companyDetails = test["CompanyDetaisl"].stringValue
+            Palestra.eventDescription = test ["EventDescription"].stringValue
             Palestra.favorite = Favoritado()
-            if Palestra.EventDay == "Seg"{
-                if var array = palestrasSeg[Palestra.EventHour!]{
+            if Palestra.eventDay == "Seg"{
+                if var array = palestrasSeg[Palestra.eventHour!]{
                     array.append(Palestra);
-                    palestrasSeg[Palestra.EventHour!] = array;
+                    palestrasSeg[Palestra.eventHour!] = array;
                 } else {
                     var array = [Schedule]();
                     array.append(Palestra)
-                    palestrasSeg[Palestra.EventHour!] = array;
+                    palestrasSeg[Palestra.eventHour!] = array;
                 }
                 
-            } else   if Palestra.EventDay == "Ter"{
-                if var array = palestrasTer[Palestra.EventHour!]{
+            } else   if Palestra.eventDay == "Ter"{
+                if var array = palestrasTer[Palestra.eventHour!]{
                     array.append(Palestra);
-                    palestrasTer[Palestra.EventHour!] = array;
+                    palestrasTer[Palestra.eventHour!] = array;
                 } else {
                     var array = [Schedule]();
                     array.append(Palestra)
-                    palestrasTer[Palestra.EventHour!] = array;
+                    palestrasTer[Palestra.eventHour!] = array;
                 }
                 
-            }else   if Palestra.EventDay == "Qua"{
-                if var array = palestrasQua[Palestra.EventHour!]{
+            }else   if Palestra.eventDay == "Qua"{
+                if var array = palestrasQua[Palestra.eventHour!]{
                     array.append(Palestra);
-                    palestrasQua[Palestra.EventHour!] = array;
+                    palestrasQua[Palestra.eventHour!] = array;
                 } else {
                     var array = [Schedule]();
                     array.append(Palestra)
-                    palestrasQua[Palestra.EventHour!] = array;
+                    palestrasQua[Palestra.eventHour!] = array;
                 }
                 
-            }else   if Palestra.EventDay == "Qui"{
-                if var array = palestrasQui[Palestra.EventHour!]{
+            }else   if Palestra.eventDay == "Qui"{
+                if var array = palestrasQui[Palestra.eventHour!]{
                     array.append(Palestra);
-                    palestrasQui[Palestra.EventHour!] = array;
+                    palestrasQui[Palestra.eventHour!] = array;
                 } else {
                     var array = [Schedule]();
                     array.append(Palestra)
-                    palestrasQui[Palestra.EventHour!] = array;
+                    palestrasQui[Palestra.eventHour!] = array;
                 }
                 
-            }else   if Palestra.EventDay == "Sex"{
-                if var array = palestrasSex[Palestra.EventHour!]{
+            }else   if Palestra.eventDay == "Sex"{
+                if var array = palestrasSex[Palestra.eventHour!]{
                     array.append(Palestra);
-                    palestrasSex[Palestra.EventHour!] = array;
+                    palestrasSex[Palestra.eventHour!] = array;
                 } else {
                     var array = [Schedule]();
                     array.append(Palestra)
-                    palestrasSex[Palestra.EventHour!] = array;
+                    palestrasSex[Palestra.eventHour!] = array;
                 }
                 
-            }else   if Palestra.EventDay == "Sab"{
-                if var array = palestrasSab[Palestra.EventHour!]{
+            }else   if Palestra.eventDay == "Sab"{
+                if var array = palestrasSab[Palestra.eventHour!]{
                     array.append(Palestra);
-                    palestrasSab[Palestra.EventHour!] = array;
+                    palestrasSab[Palestra.eventHour!] = array;
                 } else {
                     var array = [Schedule]();
                     array.append(Palestra)
-                    palestrasSab[Palestra.EventHour!] = array;
+                    palestrasSab[Palestra.eventHour!] = array;
                 }
                 
             }
