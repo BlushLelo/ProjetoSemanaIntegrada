@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert,UIUserNotificationType.Badge,UIUserNotificationType.Sound], categories: nil))
-        
+        //	application.beginBackgroundTaskWithName("notification", expirationHandler: nil)
         
         return true
     
@@ -53,9 +53,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void){
-    
+   
     
     }
+    
     
     }
     

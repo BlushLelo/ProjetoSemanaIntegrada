@@ -87,11 +87,11 @@
             <objects>
                 <viewController id="Pcd-xA-nmH" customClass="ActivityDetailController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="r9r-su-QNQ">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="LUV-Dd-C35">
-                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="placehourandvacancies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEx-6n-wkm">
@@ -176,7 +176,7 @@
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNu-La-VcP">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                        <rect key="frame" x="29" y="534" width="313" height="176"/>
+                                        <rect key="frame" x="31" y="457" width="313" height="143"/>
                                     </variation>
                                     <connections>
                                         <segue destination="U6T-7t-FZk" kind="embed" id="hUL-Pj-2KO"/>
@@ -251,7 +251,12 @@
         <scene sceneID="8PF-Iw-UZG">
             <objects>
                 <viewController id="U6T-7t-FZk" customClass="MapViewController" customModule="Semana_Integrada" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1ED-Qm-BLc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y8t-yW-1rC"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="56v-ST-AuQ">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
