@@ -103,7 +103,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
             Palestra![indexPath.row].favorite = true
             
             //notifications implement ( NSDATE para STRING)
-             let date = NSDate()
+            let date = NSDate()
             let dateFormater = NSDateFormatter()
             dateFormater.dateFormat = "H:mm" // dd-MM-yyyy-H-mm
             let stringDate = dateFormater.stringFromDate(date)
@@ -235,11 +235,6 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     }
     
-    func getData(){
-        
-        
-
-    }
     
     
     func notification(){
