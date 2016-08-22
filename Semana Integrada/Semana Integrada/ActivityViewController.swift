@@ -11,6 +11,7 @@ import UIKit
 class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
 
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var SegmentedControlBar: SegmentedControl!
     @IBAction func SegmentedControlBarAction(sender: AnyObject?) {
@@ -51,7 +52,6 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         SegmentedControlBar.selectedIndex = 0
         swipe()
         
-         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("notification"), userInfo: nil, repeats: true)
         
     }
   
@@ -102,11 +102,17 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         cell -> Void in
             Palestra![indexPath.row].favorite = true
             
-            //notifications implement
-            let theDate = NSDate()
-            let dateComp = NSDateComponents()
-            let calendar = NSCalendar.currentCalendar()
-          
+            //notifications implement ( NSDATE para STRING)
+             let date = NSDate()
+            let dateFormater = NSDateFormatter()
+            dateFormater.dateFormat = "H:mm" // dd-MM-yyyy-H-mm
+            let stringDate = dateFormater.stringFromDate(date)
+            //var convertedTime = Int(stringDate) // caso queira comparar por Int
+            
+            
+            
+            print(stringDate)
+ 
             //notifications
             
             // Carradas
@@ -120,20 +126,17 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
             pushNotification.actions
         
             // Didi
-            
-            let minute = NSCalendar.currentCalendar().component(.Minute, fromDate: theDate)
-            var PalestraHora =  Palestra![indexPath.row].EventHour
-            var minutos = minute + 15
-            if (PalestraHora == minutos){
-            
-            
+            // Validação para o dia em relacao a string
+            // ARRUMAR QUANDO OS OUTLETS ESTIVEREM SE COMUNICANDO \/
+            if(stringDate == "17:50"){
+           // if(stringDate == Palestra![indexPath.row].eventHour){
             let pushNotificationBackground  = UILocalNotification()
             
-            pushNotificationBackground.alertBody = Palestra![indexPath.row].EventTitle! + "\nA sua atividade começará em 15 minutos!"
+            pushNotificationBackground.alertBody = Palestra![indexPath.row].eventTitle! + "\nA sua atividade começará em 15 minutos!"
+            
             
             UIApplication.sharedApplication().scheduleLocalNotification(pushNotificationBackground)
             }
-            
         }
         
         
@@ -234,37 +237,31 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     func getData(){
         
-        let date = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.NSHourCalendarUnit, .NSMinuteCalendarUnit], fromDate: date)
         
-        let hour = components.hour
-        let minutes = components.minute
 
     }
     
     
     func notification(){
         
-        time -= 1
+        let date = NSDate()
+        let dateFormater = NSDateFormatter()
+        dateFormater.dateFormat = "H:mm" // dd-MM-yyyy-H-mm
+        let stringDate = dateFormater.stringFromDate(date)
+        //var convertedTime = Int(stringDate) // caso queira comparar por Int
         
-        if time <= 0 {
+        // Didi
+        // Validação para o dia em relacao a string
+        // ARRUMAR QUANDO OS OUTLETS ESTIVEREM SE COMUNICANDO \/
+        if(stringDate == "17:06"){
+            // if(stringDate == Palestra![indexPath.row].eventHour){
+            let pushNotificationBackground  = UILocalNotification()
             
-        
-        var Notification = UILocalNotification()
-        
-        Notification.alertAction = "Go back to app"
-        Notification.alertBody = "Sua palestra começa em 15 minutos."
-        
-        Notification.fireDate = NSDate(timeIntervalSinceNow: 0)
+            pushNotificationBackground.alertBody = "\nA sua atividade começará em 15 minutos!"
             
             
-        UIApplication.sharedApplication().scheduleLocalNotification(Notification)
-            
-            timer.invalidate()
+            UIApplication.sharedApplication().scheduleLocalNotification(pushNotificationBackground)
         }
-        
     }
-    
-    
 }
+    

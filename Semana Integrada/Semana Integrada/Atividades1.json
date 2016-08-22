@@ -4,7 +4,7 @@
  "EventHour": "09:00",
  "EventDay": "Seg",
  "EventVacancies": "300",
- "EventDescription":"INSERT WALL OF TEXT HERE",
+ "EventDescription":"INSERT WALL OF TEXT HERE\nTexto",
  "EventLecturer": "Xastrinho",
  "LecturerCompany":"PUC Campinas",
  "CompanyDetails":"INSERT WALL OF COMPANY TEXT HERE",
