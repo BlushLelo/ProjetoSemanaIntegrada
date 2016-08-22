@@ -12,6 +12,7 @@ import UIKit
 class ActivityDetailController: UIViewController{
 
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var placehouranddetaisl: UILabel!
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var titlee: UILabel!
@@ -75,6 +76,8 @@ class ActivityDetailController: UIViewController{
         if ( event.eventType == "WorkShop"){
             type.textColor = UIColor(red: 0.12, green: 0.52, blue: 0.78, alpha: 1.0)
         }
+        
+        
 
         type.text = event.eventType
         titlee.text = event.eventTitle
@@ -85,6 +88,46 @@ class ActivityDetailController: UIViewController{
         companyDescription.text = event.eventDescription
         descriptionn.sizeToFit()
         descriptionn.numberOfLines = 0;
+        
+       
+        let string = event.eventLocation
+        if let range = string!.rangeOfString(" ") {
+         //   print(string!.substringToIndex(range.startIndex))
+            
+            if(string!.substringToIndex(range.startIndex) == "Dom"){
+                 imageView.image = UIImage(named: "dom_gilberto_cropped")
+            }
+            if(string!.substringToIndex(range.startIndex) == "H01"){
+                imageView.image = UIImage(named: "h01_cropped")
+
+            }
+            if(string!.substringToIndex(range.startIndex) == "H02"){
+                imageView.image = UIImage(named: "h02_cropped")
+
+            }
+            if(string!.substringToIndex(range.startIndex) == "H06"){
+                imageView.image = UIImage(named: "h06_cropped")
+
+            }
+            if(string!.substringToIndex(range.startIndex) == "H08"){
+                imageView.image = UIImage(named: "h08_cropped")
+
+            }
+            if(string!.substringToIndex(range.startIndex) == "H10"){
+                imageView.image = UIImage(named: "h10_cropped")
+
+            }
+            if(string!.substringToIndex(range.startIndex) == "H14"){
+                imageView.image = UIImage(named: "h14_cropped")
+
+            }else{
+                
+            }
+                
+            
+        }
     }
+    
+    
     
 }

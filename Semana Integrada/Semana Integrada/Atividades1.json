@@ -21,7 +21,7 @@
  "LecturerCompany":"PUC Campinas",
  "CompanyDetails":"INSERT WALL OF COMPANY TEXT HERE",
  "EventType": "WorkShop",
- "EventLocation": "Lema"
+ "EventLocation": "H10 "
  },
  {
  "EventTitle": "IOT",
@@ -45,7 +45,7 @@
  "LecturerCompany":"PUC Campinas",
  "CompanyDetails":"INSERT WALL OF COMPANY TEXT HERE",
  "EventType": "Palestra",
- "EventLocation": "H11 Sala 06"
+ "EventLocation": "H06 Sala 06"
  },
  {
  "EventTitle": "NODEJs",
@@ -69,7 +69,7 @@
  "LecturerCompany":"PUC Campinas",
  "CompanyDetails":"INSERT WALL OF COMPANY TEXT HERE",
  "EventType": "Campeonato",
- "EventLocation": "H11 Sala 32"
+ "EventLocation": "H14 Sala 32"
  },
  {
  "EventTitle": "Smart Grid",
@@ -81,7 +81,7 @@
  "LecturerCompany":"PUC Campinas",
  "CompanyDetails":"INSERT WALL OF COMPANY TEXT HERE",
  "EventType": "Palestra",
- "EventLocation": "H5 Sala 13"
+ "EventLocation": "H14 Sala 13"
  },
  {
  "EventTitle": "Visita Técnica Venturus",
