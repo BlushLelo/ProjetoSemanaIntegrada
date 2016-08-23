@@ -2,7 +2,7 @@
 //  Schedule2.swift
 //  Semana Integrada
 //
-//  Created by Aluno Projeto on 18/08/16.
+//  Created by Aluno Projeto on 23/08/16.
 //  Copyright © 2016 venturuspucc. All rights reserved.
 //
 
@@ -19,6 +19,5 @@ class Schedule2: NSManagedObject {
     @NSManaged var eventLocation: String?
     @NSManaged var eventType: String?
     @NSManaged var favorite: NSNumber?
-    
     
 }

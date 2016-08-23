@@ -34,6 +34,29 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var dictionaryGeneral = [ [String:[Schedule]] ]()
     var dictionaryGeneral2 = [ [String:[NSManagedObject]] ]()
     var sortedKeys = [String]()
+    var palestras = [Schedule2]()
+    
+    
+    
+    func fetchThings() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Schedule2")
+        
+        do {
+            let teste = try managedContext.executeFetchRequest(fetchRequest) as! [Schedule2]
+            if teste.count == 0{
+                
+            } else {
+                palestras = teste
+            }
+            
+            
+        }
+        catch{
+            print("erro")
+        }
+    }
     
     
     
@@ -41,10 +64,6 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     
     override func viewWillAppear(animated: Bool) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-
-        
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.10, green: 0.74, blue: 0.61, alpha: 1.0); // Codigo para mudar a cor da Barra com o Titulo da tela
@@ -62,12 +81,11 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let appDelegated = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegated
-        
-        dictionaryGeneral = scheduleDAO.generatePalestras();
-        dictionaryGeneral2 = scheduleDAO.generatePalestras2();
+        scheduleDAO.generatePalestras2()
+        fetchThings()
+        for i in palestras {
+            print (i.eventTitle)
+        }
         SegmentedControlBar.items = ["Seg","Ter","Qua","Qui","Sex","Sab"]
         SegmentedControlBar.selectedIndex = 0
         swipe()
@@ -78,14 +96,14 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        //dictionarySelect(SegmentedControlBar.selectedIndex)
-        dictionarySelect2(SegmentedControlBar.selectedIndex)
+        dictionarySelect(SegmentedControlBar.selectedIndex)
+        //dictionarySelect2(SegmentedControlBar.selectedIndex)
         return sortedKeys[section]
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        //dictionarySelect(SegmentedControlBar.selectedIndex)
-        dictionarySelect2(SegmentedControlBar.selectedIndex)
+        dictionarySelect(SegmentedControlBar.selectedIndex)
+        //dictionarySelect2(SegmentedControlBar.selectedIndex)
         return sortedKeys.count
     }
     
@@ -95,8 +113,8 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         //let cell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath)
         
         
-        //dictionarySelect(SegmentedControlBar.selectedIndex)
-        dictionarySelect2(SegmentedControlBar.selectedIndex)
+        dictionarySelect(SegmentedControlBar.selectedIndex)
+        //dictionarySelect2(SegmentedControlBar.selectedIndex)
         
         let keys = sortedKeys
         let key = keys[indexPath.section]
@@ -176,9 +194,9 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-      //dictionarySelect(SegmentedControlBar.selectedIndex)
+      dictionarySelect(SegmentedControlBar.selectedIndex)
         
-        dictionarySelect2(SegmentedControlBar.selectedIndex)
+      //  dictionarySelect2(SegmentedControlBar.selectedIndex)
         let selectIndexPath = sender as! NSIndexPath
         let eventDetailsViewController = segue.destinationViewController as? ActivityDetailController
      
@@ -197,8 +215,8 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //dictionarySelect(SegmentedControlBar.selectedIndex)
-        dictionarySelect2(SegmentedControlBar.selectedIndex)
+        dictionarySelect(SegmentedControlBar.selectedIndex)
+     //   dictionarySelect2(SegmentedControlBar.selectedIndex)
         let keys = sortedKeys
         let key = keys[section]
       //  let numberOfRows = dictionary[key]
@@ -262,12 +280,7 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
             dictionary = scheduleDAO.getDictionary(dictionaryGeneral, selectedIndex: index)
             sortedKeys = Array(dictionary.keys).sort(<)
     }
-    
-    func dictionarySelect2(index:Int) {
-        dictionary2 = scheduleDAO.getDictionary2(dictionaryGeneral2, selectedIndex: index)
-        sortedKeys = Array(dictionary2.keys).sort(<)
-    }
-    
+
     
 
     func openSite(alert:UIAlertAction!){

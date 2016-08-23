@@ -22,8 +22,6 @@ class ScheduleDAO : EventTableCellView {
     var palestrasSex2 = [String:[Schedule2]]()
     var palestrasSab2 = [String:[Schedule2]]()
     var palestrasGerais2 = [ [String:[Schedule2]] ]()
-    var ListaDePalestras2 = [Schedule2]()
-  
     
     var Dictionary = [String:[Schedule]]()
     var palestrasSeg = [String:[Schedule]]()
@@ -59,8 +57,9 @@ class ScheduleDAO : EventTableCellView {
         
 
     } */
+
     
-    func saveItem(title: String){
+    func saveItem(title: String, hour: String, type: String, location: String, day: String){
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -68,10 +67,13 @@ class ScheduleDAO : EventTableCellView {
         let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Schedule2
         
         item.eventTitle = title
+        item.eventHour = hour
+        item.eventType = type
+        item.eventLocation = location
+        item.eventDay = day
         
         do {
             try managedContext.save()
-            ListaDePalestras2.append(item)
         }
         catch{
             print("error")
@@ -80,18 +82,7 @@ class ScheduleDAO : EventTableCellView {
         
     }
     
-    func fetchThings() {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: "Schedule2")
-        
-        do {
-            let teste = try managedContext.executeRequest(fetchRequest)
-            Dictionary2 = teste as! [String:[NSManagedObject]]
-    }
-        catch{
-            
-        }
+
   
     
     func generatePalestras() -> [ [String:[Schedule]] ] {
@@ -189,7 +180,7 @@ class ScheduleDAO : EventTableCellView {
         return palestrasGerais
     }
     
-    func generatePalestras2() -> [ [String:[NSManagedObject]] ] {
+    func generatePalestras2() {
         
         
         
@@ -200,127 +191,25 @@ class ScheduleDAO : EventTableCellView {
         
         for i in myJson{
             let test = i.1
-            let Palestra = NSManagedObject();
-            
-            
             let title = test["EventTitle"].stringValue
-            
-            
-            
-             Palestra.setValue(test["EventTitle"].stringValue, forKey: "eventTitle")
-             Palestra.setValue(test["EventHour"].stringValue, forKey: "eventHour")
-             Palestra.setValue(test["EventType"].stringValue, forKey: "eventType")
-             Palestra.setValue(test["EventLocation"].stringValue, forKey: "eventLocation")
-             Palestra.setValue(test["EventDay"].stringValue, forKey: "eventDay")
-             let eventDay = Palestra.valueForKey("eventDay") as! String
-             let eventHour = Palestra.valueForKey("eventHour") as! String
-            if eventDay == "Seg"{
-                if var array = palestrasSeg2[eventHour]{
-                    array.append(Palestra)
-                    saveItem(Palestra)
-                    palestrasSeg2[eventHour] = array
-                } else {
-                    var array = [NSManagedObject]()
-                    array.append(Palestra)
-                    saveItem(Palestra)
-                    palestrasSeg2[eventHour] = array
-                }
-                
-            } else if eventDay == "Ter"{
-                if var array = palestrasTer2[eventHour]{
-                    array.append(Palestra)
-                    palestrasTer2[eventHour] = array
-                } else {
-                    var array = [NSManagedObject]()
-                    array.append(Palestra)
-                    saveItem(Palestra)
-                    palestrasTer2[eventHour] = array
-                }
-                
-            }else   if eventDay == "Qua"{
-                if var array = palestrasQua2[eventHour]{
-                    array.append(Palestra)
-                    saveItem(Palestra)
-                    palestrasQua2[eventHour] = array
-                } else {
-                    var array = [NSManagedObject]()
-                    array.append(Palestra)
-                    saveItem(Palestra)
-                    palestrasQua2[eventHour] = array
-                }
-                
-            }else   if eventDay == "Qui"{
-                if var array = palestrasQui2[eventHour]{
-                    array.append(Palestra)
-                    saveItem(Palestra)
-                    palestrasQui2[eventHour] = array
-                } else {
-                    var array = [NSManagedObject]()
-                    array.append(Palestra)
-                    saveItem(Palestra)
-                    palestrasQui2[eventHour] = array
-                }
-                
-            }else   if eventDay == "Sex"{
-                if var array = palestrasSex2[eventHour]{
-                    array.append(Palestra)
-                    saveItem(Palestra)
-                    palestrasSex2[eventHour] = array
-                } else {
-                    var array = [NSManagedObject]()
-                    array.append(Palestra)
-                    saveItem(Palestra)
-                    palestrasSex2[eventHour] = array
-                }
-                
-            }else   if eventDay == "Sab"{
-                if var array = palestrasSab2[eventHour]{
-                    array.append(Palestra)
-                    saveItem(Palestra)
-                    palestrasSab2[eventHour] = array
-                } else {
-                    var array = [NSManagedObject]()
-                    array.append(Palestra)
-                    saveItem(Palestra)
-                    palestrasSab2[eventHour] = array
-                }
-                
-            }
-            
+            let hour = test["EventHour"].stringValue
+            let type = test["EventType"].stringValue
+            let location = test["EventLocation"].stringValue
+            let day = test["EventDay"].stringValue
+
+            saveItem(title,hour: hour,type: type,location: location,day: day)
         }
-        
-        
-        
-        
-        palestrasGerais2.append(palestrasSeg2)
-        palestrasGerais2.append(palestrasTer2)
-        palestrasGerais2.append(palestrasQua2)
-        palestrasGerais2.append(palestrasQui2)
-        palestrasGerais2.append(palestrasSex2)
-        palestrasGerais2.append(palestrasSab2)
-        
-        return palestrasGerais2
     }
 
     
     func getDictionary(DictionaryDePalestras:[[String:[Schedule]]],selectedIndex:Int) -> [String:[Schedule]] {
         if (selectedIndex < 6){
-        Dictionary = DictionaryDePalestras[selectedIndex]
+      //  Dictionary = DictionaryDePalestras[selectedIndex]
         
         } else {
             
         }
         return Dictionary
-    }
-    
-    func getDictionary2(DictionaryDePalestras:[[String:[NSManagedObject]]],selectedIndex:Int) -> [String:[NSManagedObject]] {
-        if (selectedIndex < 6){
-            Dictionary2 = DictionaryDePalestras[selectedIndex]
-            
-        } else {
-            
-        }
-        return Dictionary2
     }
     
 }
