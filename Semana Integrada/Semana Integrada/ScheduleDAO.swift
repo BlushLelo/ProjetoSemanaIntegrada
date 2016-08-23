@@ -14,15 +14,15 @@ class ScheduleDAO : EventTableCellView {
     
     
  
-    var Dictionary2 = [String:[NSManagedObject]]()
-    var palestrasSeg2 = [String:[NSManagedObject]]()
-    var palestrasTer2 = [String:[NSManagedObject]]()
-    var palestrasQua2 = [String:[NSManagedObject]]()
-    var palestrasQui2 = [String:[NSManagedObject]]()
-    var palestrasSex2 = [String:[NSManagedObject]]()
-    var palestrasSab2 = [String:[NSManagedObject]]()
-    var palestrasGerais2 = [ [String:[NSManagedObject]] ]()
-    var ListaDePalestras2 = [NSManagedObject]()
+    var Dictionary2 = [String:[Schedule2]]()
+    var palestrasSeg2 = [String:[Schedule2]]()
+    var palestrasTer2 = [String:[Schedule2]]()
+    var palestrasQua2 = [String:[Schedule2]]()
+    var palestrasQui2 = [String:[Schedule2]]()
+    var palestrasSex2 = [String:[Schedule2]]()
+    var palestrasSab2 = [String:[Schedule2]]()
+    var palestrasGerais2 = [ [String:[Schedule2]] ]()
+    var ListaDePalestras2 = [Schedule2]()
   
     
     var Dictionary = [String:[Schedule]]()
@@ -60,18 +60,14 @@ class ScheduleDAO : EventTableCellView {
 
     } */
     
-    func saveItem(scheduleToSave : NSManagedObject){
+    func saveItem(title: String){
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let entity = NSEntityDescription.entityForName("Schedule2", inManagedObjectContext: managedContext)
-        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        item.setValue(scheduleToSave.valueForKey("eventTitle"), forKey: "eventTitle")
-        item.setValue(scheduleToSave.valueForKey("eventHour"), forKey: "eventHour")
-        item.setValue(scheduleToSave.valueForKey("eventType"), forKey: "eventType")
-        item.setValue(scheduleToSave.valueForKey("eventLocation"), forKey: "eventLocation")
-        item.setValue(scheduleToSave.valueForKey("eventDay"), forKey: "eventDay")
-
+        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Schedule2
+        
+        item.eventTitle = title
         
         do {
             try managedContext.save()
@@ -205,6 +201,12 @@ class ScheduleDAO : EventTableCellView {
         for i in myJson{
             let test = i.1
             let Palestra = NSManagedObject();
+            
+            
+            let title = test["EventTitle"].stringValue
+            
+            
+            
              Palestra.setValue(test["EventTitle"].stringValue, forKey: "eventTitle")
              Palestra.setValue(test["EventHour"].stringValue, forKey: "eventHour")
              Palestra.setValue(test["EventType"].stringValue, forKey: "eventType")
