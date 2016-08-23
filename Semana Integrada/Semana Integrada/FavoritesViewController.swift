@@ -11,6 +11,8 @@ import UIKit
 class FavoritesViewController: UIViewController,UITableViewDataSource, UITableViewDelegate{
     
     
+    
+    
     @IBOutlet weak var SegmentedControlBar: SegmentedControl!
     var task:NSMutableArray! = NSMutableArray()
     let scheduleDAO = ScheduleDAO()

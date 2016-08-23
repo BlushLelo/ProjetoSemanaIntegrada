@@ -12,6 +12,7 @@ import UIKit
 class ActivityDetailController: UIViewController{
 
     
+    @IBOutlet weak var SubtitleView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var placehouranddetaisl: UILabel!
     @IBOutlet weak var type: UILabel!

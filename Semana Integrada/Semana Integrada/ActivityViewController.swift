@@ -101,42 +101,8 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         cell?.buttontappedAction = {
         cell -> Void in
             Palestra![indexPath.row].favorite = true
+            self.notification(Palestra![indexPath.row])
             
-            //notifications implement ( NSDATE para STRING)
-            let date = NSDate()
-            let dateFormater = NSDateFormatter()
-            dateFormater.dateFormat = "H:mm" // dd-MM-yyyy-H-mm
-            let stringDate = dateFormater.stringFromDate(date)
-            //var convertedTime = Int(stringDate) // caso queira comparar por Int
-            
-            
-            
-            print(stringDate)
- 
-            //notifications
-            
-            // Carradas
-            let pushNotification = UIAlertController(title: "", message: "Para se inscrever nesta atividade,acesse o site da PUC.", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            pushNotification.addAction(UIAlertAction(title: "Depois", style: UIAlertActionStyle.Default, handler: nil))
-            pushNotification.addAction(UIAlertAction(title: "Acessar", style: UIAlertActionStyle.Default, handler: self.openSite))// nao sei porque tem q ser self e nao passar parametro, mas funciona
-            
-            UIApplicationWillEnterForegroundNotification
-            self.presentViewController(pushNotification, animated: true, completion: nil)
-            pushNotification.actions
-        
-            // Didi
-            // Validação para o dia em relacao a string
-            // ARRUMAR QUANDO OS OUTLETS ESTIVEREM SE COMUNICANDO \/
-            if(stringDate == "17:50"){
-           // if(stringDate == Palestra![indexPath.row].eventHour){
-            let pushNotificationBackground  = UILocalNotification()
-            
-            pushNotificationBackground.alertBody = Palestra![indexPath.row].eventTitle! + "\nA sua atividade começará em 15 minutos!"
-            
-            
-            UIApplication.sharedApplication().scheduleLocalNotification(pushNotificationBackground)
-            }
         }
         
         
@@ -144,6 +110,8 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         return cell!
     }
 
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         dictionarySelect(SegmentedControlBar.selectedIndex)
         let selectIndexPath = sender as! NSIndexPath
@@ -235,28 +203,58 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     }
     
-    
-    
-    func notification(){
-        
-        let date = NSDate()
+    func notification( palestra:Schedule){
+      
+        let convertingHour = truncateHour(palestra)
+               
+        let dateString = convertingHour + "/23/08/2016"
         let dateFormater = NSDateFormatter()
-        dateFormater.dateFormat = "H:mm" // dd-MM-yyyy-H-mm
-        let stringDate = dateFormater.stringFromDate(date)
-        //var convertedTime = Int(stringDate) // caso queira comparar por Int
+        dateFormater.dateFormat = "HH/dd-MM-yyyy" // dd-MM-yyyy-H-mm
+        dateFormater.timeZone = NSTimeZone(abbreviation: "GM+0:00")
+        let dateFromString = dateFormater.dateFromString(dateString)
+       
+       
+        print (dateFromString)
+        var a = NSDate()
+        print(a)
         
+        //notifications
+        
+        // Carradas
+        let pushNotification = UIAlertController(title: "", message: "Para se inscrever nesta atividade,acesse o site da PUC.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        pushNotification.addAction(UIAlertAction(title: "Depois", style: UIAlertActionStyle.Default, handler: nil))
+        pushNotification.addAction(UIAlertAction(title: "Acessar", style: UIAlertActionStyle.Default, handler: self.openSite))// nao sei porque tem q ser self e nao passar parametro, mas funciona
+        
+        UIApplicationWillEnterForegroundNotification
+        self.presentViewController(pushNotification, animated: true, completion: nil)
+        pushNotification.actions
+        if(palestra.favorite == true){
         // Didi
         // Validação para o dia em relacao a string
-        // ARRUMAR QUANDO OS OUTLETS ESTIVEREM SE COMUNICANDO \/
-        if(stringDate == "17:06"){
-            // if(stringDate == Palestra![indexPath.row].eventHour){
+        
+        //if( dateFromString == dateString ){
             let pushNotificationBackground  = UILocalNotification()
-            
-            pushNotificationBackground.alertBody = "\nA sua atividade começará em 15 minutos!"
-            
+            pushNotificationBackground.alertBody = palestra.eventTitle! + "\nA sua atividade começará em 15 minutos!"
+            print("entrou")
             
             UIApplication.sharedApplication().scheduleLocalNotification(pushNotificationBackground)
+          //  }
         }
+    
     }
+    
+    func truncateHour(palestra:Schedule) -> String{
+        
+        let string = palestra.eventHour
+        let aux1 =  string!.substringToIndex((string?.startIndex.advancedBy(2))!)
+        let  aux2 = string!.substringFromIndex((string?.endIndex.advancedBy(-2))!)
+        let auxfinal = aux1 + aux2
+        return auxfinal
+    }
+    
+
+    
+    
 }
     
