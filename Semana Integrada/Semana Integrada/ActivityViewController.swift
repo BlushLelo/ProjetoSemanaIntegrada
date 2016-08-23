@@ -206,17 +206,17 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func notification( palestra:Schedule){
       
         let convertingHour = truncateHour(palestra)
-        NSDate
-        
+               
         let dateString = convertingHour + "/23/08/2016"
         let dateFormater = NSDateFormatter()
-        dateFormater.dateFormat = "HHmm/dd-MM-yyyy" // dd-MM-yyyy-H-mm
+        dateFormater.dateFormat = "HH/dd-MM-yyyy" // dd-MM-yyyy-H-mm
         dateFormater.timeZone = NSTimeZone(abbreviation: "GM+0:00")
         let dateFromString = dateFormater.dateFromString(dateString)
        
        
-        print (dateString)
-        
+        print (dateFromString)
+        var a = NSDate()
+        print(a)
         
         //notifications
         
@@ -229,20 +229,19 @@ class ActivyViewController: UIViewController,UITableViewDataSource,UITableViewDe
         UIApplicationWillEnterForegroundNotification
         self.presentViewController(pushNotification, animated: true, completion: nil)
         pushNotification.actions
-        
+        if(palestra.favorite == true){
         // Didi
         // Validação para o dia em relacao a string
-        // ARRUMAR QUANDO OS OUTLETS ESTIVEREM SE COMUNICANDO \/
         
-       // if( dateFromString ==  convertedTime){
+        //if( dateFromString == dateString ){
             let pushNotificationBackground  = UILocalNotification()
             pushNotificationBackground.alertBody = palestra.eventTitle! + "\nA sua atividade começará em 15 minutos!"
             print("entrou")
             
             UIApplication.sharedApplication().scheduleLocalNotification(pushNotificationBackground)
-     //   }
-        
-        
+          //  }
+        }
+    
     }
     
     func truncateHour(palestra:Schedule) -> String{
